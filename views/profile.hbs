@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="profile.css">
+        <script src="jQuery.js"></script>
+        <meta charset="UTF-8">
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">      
+    </head>
+    
+    <body>
+        <div class="dashboard-container">
+            <div id="nav-bar">
+<!-----------------------NAVBAR JS----------------------------------->
+                <script>
+                    window.onscroll = function(){
+                        stickyBar()
+                    };
+
+                    var navbar = document.getElementById("nav-bar");
+                    var sticky = navbar.offsetTop;
+
+                    function stickyBar(){
+                        if(window.pageYOffset > sticky){
+                            navbar.classList.add("sticky")
+                        }else{
+                            navbar.classList.remove("sticky")
+                        }
+                    }
+                </script>
+<!-------------------------------------------------------------------->
+                <img src="image/LOGO2.png" class="logo">
+                
+                <ul class="nav">
+                    <a href="/games" name="games">Games</a>
+                    <a href="/system" name="system">System</a>
+                    <a href="/upload" name="upload">Upload</a>
+                    
+                    <div class="nav-right">
+                        <div class="search-container">
+                            <input class="search-box" type="text" name="search" placeholder=" Search..." >
+                            <a class="search-btn" href="#">
+                                <i class="fas fa-search"></i>
+                            </a>
+                        </div>
+                        <a href="/cart"><i class="fas fa-shopping-cart cart"></i></a>
+                        <a href="/profile" class="profile" name="profile">Profile</a>
+                    </div>
+                </ul>
+   
+            </div>
+            
+            <div class="content-container">
+                
+                <div class="header">
+                    <img src="image/temp.jpg">
+                </div>
+                
+                <div class="content">
+                    
+                    <div class="user-details">
+                        <div class="image-wrapper">
+                            <img src="image/user2.png">
+                        </div>
+
+                        <div class="user">
+                            <div class="username">Francine Sia</div>
+                            <div class="location-container">
+                                <div class="location-label">Location</div>
+                                <div class="location">Binondo, Manila</div>
+                            </div>
+                        </div>
+                        
+                        <a href="/loginpage">
+                                <div class="logout-container">
+                                    <img src="/image/logout.png" class="logout">
+                                </div>
+                            </a>
+                    </div>
+                    
+                    
+                    <div class="listing-container">
+                        
+                        <div class="listing-label">Listings</div>
+                        
+                        
+                        <div class="product" id="2">
+                            <a href="/rental2" class="product">
+                                <img src="image/Spiderman/ps4.jpg" class="available-image">
+                                <div class="available-details">
+                                    <div class="product-title">Marvel's Spider-Man</div>
+                                    <div class="price">₱700</div>
+<!--
+                                    <div class="rent-button">
+                                        RENT
+                                    </div>
+-->
+                                </div>
+                            </a>
+                        </div>
+                    
+                    </div>
+                    
+                </div>
+                
+                
+                
+            </div>
+        </div>
+    </body>
+</html>

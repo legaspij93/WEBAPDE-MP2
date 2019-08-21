@@ -1,0 +1,145 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="rental.css">
+        <script src="jQuery.js"></script>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    </head>
+
+    <body>
+        <div class="rental-container">
+            <div class="bg">
+                    <img src="image/bg.jpg">
+            </div>
+            <div id="nav-bar">
+<!-----------------------NAVBAR JS----------------------------------->
+                <script>
+                    window.onscroll = function(){
+                        stickyBar()
+                    };
+
+                    var navbar = document.getElementById("nav-bar");
+                    var sticky = navbar.offsetTop;
+
+                    function stickyBar(){
+                        if(window.pageYOffset > sticky){
+                            navbar.classList.add("sticky")
+                        }else{
+                            navbar.classList.remove("sticky")
+                        }
+                    }
+                </script>
+<!-------------------------------------------------------------------->
+                <img src="image/LOGO2.png" class="logo">
+                
+                <ul class="nav">
+                    <a href="/games" name="games">Games</a>
+                    <a href="/system" name="system">System</a>
+                    <a href="/upload" name="upload">Upload</a>
+                    
+                    <div class="nav-right">
+                        <div class="search-container">
+                            <input class="search-box" type="text" name="search" placeholder=" Search..." >
+                            <a class="search-btn" href="#">
+                                <i class="fas fa-search"></i>
+                            </a>
+                        </div>
+                        <a href="/cart"><i class="fas fa-shopping-cart cart"></i></a>
+                        <a href="/profile" class="profile" name="profile">Profile</a>
+                    </div>
+                </ul>
+            </div>
+            
+            <div class="main-body">
+                
+
+                <div class="rental-post">
+                    <div class="product-image-container">
+                        <div class="product-image"><img src="image/Spiderman/ps4.jpg"></div>
+                    </div>
+                    <div class="product-details-container">
+                        <div class="product-details">
+                            <div class="product-title">Marvel's Spiderman</div>
+                            <div class="genre">
+                                <div class="genre-label">Genre</div>
+                                <div class="product-genre">
+                                    <a href="#">Action, Adventure</a>
+                                </div>
+                            </div>
+                            
+                            <div class="platform">
+                                <div class="platform-label">Platform</div>
+                                <div class="product-platform">PS4</div>
+                            </div>
+
+                            
+                            <div class="poster-details">
+                                <div class="user-details-ctnr">
+                                    <div class="user-image-wrapper">
+                                        <div class="user-image"><img src="image/usericon.png"></div>
+                                    </div>
+                                    
+                                    <div class="user">
+                                        <div class="user-ctnr">
+                                            <span id="posted-by-label">Posted By</span>
+                                            <a href="/profile2" id="user-poster">John Legaspi</a>
+                                        </div>
+                                        <div class="date-posted-ctnr">
+                                            <span id="date-label">Posted On</span>
+                                            <span id="date">08/01/2019</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                 
+                                <div class="status-container">
+                                    <div class="status-label">Status</div>
+                                    <div class="status">Available</div>
+                                </div>
+                                
+                                <div class="description-container">
+                                    <div class="description-label">Description</div>
+                                    <div class="description">Comes with case. Finished it. No scratches.</div>
+                                </div>
+                                
+                                <div class="region-container">
+                                    <div class="region-label">Region Restriction</div>
+                                    <div class="region">None/Global</div>
+                                </div>
+                                
+                                <div class="courier-container">
+                                    <div class="courier-label">Courier</div>
+                                    <div class="courier">LBC</div>
+                                </div>
+                                
+                                <div class="period-container">
+                                    <div class="period-label">Rental Period</div>
+                                    <div class="period">1 month</div>
+                                </div>
+                                
+                                <div class="price-container">
+                                    <div class="price-label">Price</div>
+                                    <div class="price">₱500</div>
+                                </div>
+                                
+                                <div class="rent-button-container">
+                                    <div class="rent-button">ADD TO CART</div>
+                                </div>
+                                
+                                <script>
+                                    $(".rent-button-container").click(function(){
+                                        alert("Added to cart!");
+                                        console.log("blejh");
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+                
+            </div>
+        </div>
+    </body>
+</html>

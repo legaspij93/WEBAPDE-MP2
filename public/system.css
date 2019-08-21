@@ -39,11 +39,8 @@
     max-width: 100%;
     position: relative;
     overflow-x: hidden;
-/*
-    display: flex;
-    flex-direction: column;
-*/
 }
+
 
 #nav-bar{
     height: 5em;
@@ -153,12 +150,18 @@
 }
 /*END OF NAVBAR*/
 
+/*
+.content-container{
+    padding: 0 20px;
+}
+*/
+
 .image-slider{
     position: relative;
     background: #2f3649;
     padding: 0;
-    margin-top: 0;
-    height: 645px;
+    margin-top: 5;
+    height: 492px;
     width: 100%px;
 }
 
@@ -271,84 +274,14 @@
 .games-container{
     margin: 30px;
     margin-top: 40px;
-    display: block;    
+    display: block;
+    
 }
 
 .all-platforms-container{
     display: flex;
     margin-bottom: 40px;
     
-}
-
-.label{
-    font-size: 30px;
-    margin-bottom: 30px;
-    display: flex;
-}
-
-.choosing{
-    position: absolute;
-    left: 70%;
-    display: flex;
-
-}
-
-.systems-container{
-    margin-right: 20px;
-}
-
-.genre-options-label, .systems-options-label{
-    font-size: 14px;
-/*    font-family: ralewayregular;*/
-    color: #fd8f4b;
-    
-    
-}
-
-.genre-options, .systems-options{
-    height: 45px;
-    border-style: none;
-    border-bottom: solid #737373 1px;
-    color: black;
-    background-color: transparent;
-    font-size: 16;
-    padding: 0px 9px;
-    font-family: ralewayregular;
-}
-
-.options a{
-    padding: 15px;
-    margin: 10px;
-    color: #fd8f4b;
-    text-decoration: none;
-    border: solid #fd8f4b 1px;
-    border-radius: 20px; 
-}
-
-.active{
-    color: white;
-    background-color: #fd8f4b;
-}
-
-.all-platforms-container a:hover{
-    padding: 15px;
-    margin: 10px;
-    color: #fd8f4b;
-    text-decoration: none;
-    border: solid #fd8f4b 1px;
-    border-radius: 20px;
-    background-color: #d4d4d4;
-}
-
-
-.featured{
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: flex-start;
-  
 }
 
 #ps4 a{
@@ -388,14 +321,18 @@
     background-color: #d4d4d4;
 }
 
+
+
+
+
 .popular-games, .recent-releases, .featured{
     display: flex;
     flex-direction: row;
     margin-top: 15px;
+    justify-content: space-around;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: flex-start;
-
+    
+    
 }
 
 .popular-games,.product-title,.release-date{
@@ -443,25 +380,17 @@
     font-size: 24px;
 
 }
-
 .see-all{
     color: #fd8f4b;
     font-size: 14;
+    margin-top: .7%;
     margin-left: 50px;
-    padding: 5px;
-}
-
-.see-all:hover{
-    background-color: #e6e6e6;
-
 }
 
 .see-all a{
     color: #fd8f4b;
     text-decoration: none;
 }
-
-
 
 .details{
     margin-top: 15px;

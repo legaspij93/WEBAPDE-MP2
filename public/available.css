@@ -1,0 +1,352 @@
+/*--------------------FONTS USED--------------------*/
+@font-face {
+    font-family: ralewayregular;
+    src: url(fonts/ralewayregular.ttf);
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: ralewaysemibold;
+    src: url(fonts/ralewaysemibold.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: lemonmilk;
+    src: url(fonts/lemonmilk.otf);
+    font-weight: normal;
+    font-style: normal;
+
+}
+/*----------------------------------------------------*/
+*{
+    list-style: none;
+    font-family: ralewaysemibold;
+    margin: 0;
+    padding: 0;
+}
+
+
+.dashboard-container{
+    background-color:transparent;
+    height: 100%;
+    margin: 0px;
+    min-width: 100%;
+    max-width: 100%;
+    position: relative;
+    overflow-x: hidden;
+
+}
+
+.content-container{
+    background-color: transparent;
+    height: 100%;
+    margin: 0px;
+    display: flex;
+    flex-wrap: wrap; 
+    flex-direction: column;
+
+}
+
+
+#nav-bar{
+    height: 5em;
+    background-color: #737373;
+    overflow: hidden;
+    padding: 0 20px;
+    color: white;
+    position: relative;
+    z-index: 99;
+}
+
+.logo{
+    height: 2.5em;
+    margin-top: 1%;
+    float: left;
+    padding-right: 2.1875em;
+}
+
+.nav{
+    line-height: 5em;
+}
+
+.nav a{
+    font-family: ralewaysemibold;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    padding: 0 10px;
+    transition: 0.4s;
+}
+
+.search-container{
+    position: absolute;
+    transform: translate(-50%, -35%);
+    background: #2f3640;
+    height: 1.875em;
+    border-radius: 30px;
+    margin-top: 0.625em;
+    padding: 0.625em;
+    top: 1.3em;
+    left: 83%;
+}
+
+.search-btn{
+    color: #fd8f4b;
+    float: right;
+    width: 10px;
+    height: 30px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+
+.search-box{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 30px;
+    width: 9.375em;
+}
+
+
+.cart{
+    height: 1.2em;
+    width: 1.2em;
+    position: absolute;
+    margin-top: 0.3em;
+    padding: 0.3em;
+    top: 0.3125em;
+    left: 90%;
+}
+
+.profile{
+    position: absolute;
+    top: -0.2em;
+    right: 1%;
+}
+
+.nav-right{
+    float: right;
+    line-height: 80px;
+}
+
+
+.nav a:hover{
+    color: #fd8f4b;
+}
+
+/*FOR NAVBAR*/
+.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky + .content-container{
+    padding-top: 80px;
+}
+/*END OF NAVBAR*/
+
+
+.details-container{
+    height: 250px;
+    width: 100%;
+/*    position: absolute;*/
+/*    top: 540px;*/
+    border-style: none;
+    padding: 15px;
+    padding-left: 20px;
+    margin-top: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.product-image-container{
+    height: 230px;
+    width: 184.62px;
+    position: absolute;
+/*    top: -10px;*/
+/*    z-index: 60;*/
+    
+}
+
+.product-image{
+    height: 100%;
+    width: 100%;
+    position: absolute; 
+}
+
+.product-container{
+    position: absolute;
+    height: 90%;
+    width: 80%;
+    display: block;
+    left: 17%;
+}
+
+.product-name{
+    font-family: ralewaysemibold;
+    color: white;
+    font-size: 24px;
+/*    position: absolute;*/
+}
+
+.details{
+    color: #d4d4d4;
+    font-family: ralewayregular;
+    font-size: 14px;
+    margin-top: 10px;
+/*
+    left: 15%;
+    top: 15%;
+    position: absolute;
+*/
+    
+}
+
+.details-list{
+    list-style: none;
+    display: inline;
+}
+
+#release-label, #genre-label{
+    font-family: ralewaysemibold;
+    color: #737373;
+}
+
+#release, #genre, #rating-label{
+    font-family: ralewayregular;
+}
+
+.rating-container{
+    display: flex;
+    padding-top: 10px;
+    width: 80%;
+    color: white;
+}
+
+.rating-label{
+    font-size: 14px;
+    
+}
+
+.rating{
+    font-size: 14px;
+    font-family: ralewayregular;
+    padding-left: 10px;
+}
+
+.description-container{
+    display: flex;
+    padding-top: 10px;
+    width: 80%;
+    color: white;
+    
+}
+
+.description-label{
+    font-size: 14px;
+    
+}
+
+.description-container p{
+    font-size: 14px;
+    font-family: ralewayregular;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    line-height: 1.8;
+}
+/*////////////////AFTER HEADER////////////////////////////*/
+
+.body-container{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: transparent;
+    padding: 3%;
+    position: absolute;
+    top: 50%;
+    
+}
+
+.after-details{
+    padding: 10px;
+    display: block;
+}
+
+.available-container{
+    display: flex;
+    margin-top: 20px;
+}
+
+.available-label{
+    font-size: 24px;
+    font-family: ralewaysemibold;
+    color: black;
+}
+
+.product{
+    margin-top: 20px;
+    width: 200px;
+    display: block;
+}
+
+.available-image{
+    height: 200px;
+}
+
+.available-details{
+    margin-top: 15px;
+    color: black;
+}
+
+.product-title{
+    font-size: 16px;
+
+}
+
+.price{
+    font-size: 14px;
+}
+
+.product,.available-details,.price{
+    text-align: center;
+}
+
+.rent-button{
+    height: 30px;
+    width: 150px;
+    background-color:#fd8f4b;
+    padding: 5px;
+    color: white;
+    font-family: ralewayregular;
+    text-align: center;
+    align-content: center;
+    display: inline-block;
+    line-height: 30px;
+    margin-top: 5px;
+    border-style: none;
+    border-radius: 3px;
+}
+
+.rent-button:hover{
+    background-color: #f66d18;
+    cursor: pointer;
+}
+
+#1{
+    float: left;
+}

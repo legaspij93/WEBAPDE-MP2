@@ -36,34 +36,31 @@
     height: 100%;
     width: 100%;
     margin: 0px;
-    max-width: 100%;
-    position: relative;
-    overflow-x: hidden;
-/*
-    display: flex;
-    flex-direction: column;
-*/
 }
 
+
 #nav-bar{
-    height: 5em;
+    height: 80px;
     background-color: #737373;
     overflow: hidden;
+/*
+    overflow: hidden;
+    display: inline-block;
+*/
     padding: 0 20px;
     color: white;
-    position: relative;
-    z-index: 99;
+    z-index: 1000;
 }
 
 .logo{
-    height: 2.5em;
+    height: 40px;
     margin-top: 1%;
     float: left;
-    padding-right: 2.1875em;
+    padding-right: 35px;
 }
 
 .nav{
-    line-height: 5em;
+    line-height: 80px;
 }
 
 .nav a{
@@ -76,14 +73,14 @@
 }
 
 .search-container{
-    position: absolute;
+    position: fixed;
     transform: translate(-50%, -35%);
     background: #2f3640;
-    height: 1.875em;
+    height: 30px;
     border-radius: 30px;
-    margin-top: 0.625em;
-    padding: 0.625em;
-    top: 1.3em;
+    margin-top: 10px;
+    padding: 10px;
+    top: 4%;
     left: 83%;
 }
 
@@ -111,24 +108,25 @@
     font-size: 16px;
     transition: 0.4s;
     line-height: 30px;
-    width: 9.375em;
+    width: 150px;
 }
 
-
 .cart{
-    height: 1.2em;
-    width: 1.2em;
-    position: absolute;
-    margin-top: 0.3em;
-    padding: 0.3em;
-    top: 0.3125em;
+    height: 24px;
+    width: 24px;
+    position: fixed;
+    margin-top: 10px;
+    padding: 10px;
+    top: 2%;
     left: 90%;
 }
 
-.profile{
-    position: absolute;
-    top: -0.2em;
-    right: 1%;
+.login{
+    position: fixed;
+    margin-top: 10px;
+    padding: 10px;
+    top: -1%;
+    left: 92.5%;
 }
 
 .nav-right{
@@ -153,12 +151,18 @@
 }
 /*END OF NAVBAR*/
 
+/*
+.content-container{
+    padding: 0 20px;
+}
+*/
+
 .image-slider{
     position: relative;
     background: #2f3649;
     padding: 0;
-    margin-top: 0;
-    height: 645px;
+    margin-top: 5;
+    height: 492px;
     width: 100%px;
 }
 
@@ -267,12 +271,15 @@
 #i1:checked ~ .slide-buttons #dot1, #i2:checked ~ .slide-buttons #dot2, #i3:checked ~ .slide-buttons #dot3{
     background: #fff;
 }
+/*////////END OF IMAGE SLIDER////////*/
 
 .games-container{
     margin: 30px;
     margin-top: 40px;
-    display: block;    
+    display: block;
+    
 }
+
 
 .all-platforms-container{
     display: flex;
@@ -280,11 +287,6 @@
     
 }
 
-.label{
-    font-size: 30px;
-    margin-bottom: 30px;
-    display: flex;
-}
 
 .choosing{
     position: absolute;
@@ -329,37 +331,7 @@
     color: white;
     background-color: #fd8f4b;
 }
-
-.all-platforms-container a:hover{
-    padding: 15px;
-    margin: 10px;
-    color: #fd8f4b;
-    text-decoration: none;
-    border: solid #fd8f4b 1px;
-    border-radius: 20px;
-    background-color: #d4d4d4;
-}
-
-
-.featured{
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: flex-start;
-  
-}
-
-#ps4 a{
-    padding: 15px;
-    margin: 10px;
-    color: #fd8f4b;
-    text-decoration: none;
-    border: solid #fd8f4b 1px;
-    border-radius: 20px;
-}
-
+/*
 #xbox a{
     padding: 15px;
     margin: 10px;
@@ -377,6 +349,7 @@
     border: solid #fd8f4b 1px;
     border-radius: 20px;   
 }
+*/
 
 .all-platforms-container a:hover{
     padding: 15px;
@@ -388,25 +361,17 @@
     background-color: #d4d4d4;
 }
 
-.popular-games, .recent-releases, .featured{
+
+.featured{
     display: flex;
     flex-direction: row;
     margin-top: 15px;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-content: flex-start;
-
+  
 }
 
-.popular-games,.product-title,.release-date{
-    font-family: ralewayregular;
-    text-align: center;  
-}
-
-.recent-releases,.product-title,.release-date{
-    font-family: ralewayregular;
-    text-align: center;  
-}
 
 .featured,.product-title,.release-date{
     font-family: ralewayregular;
@@ -443,24 +408,13 @@
     font-size: 24px;
 
 }
-
 .see-all{
     color: #fd8f4b;
     font-size: 14;
     margin-left: 50px;
     padding: 5px;
+    border-radius: 7px;
 }
-
-.see-all:hover{
-    background-color: #e6e6e6;
-
-}
-
-.see-all a{
-    color: #fd8f4b;
-    text-decoration: none;
-}
-
 
 
 .details{
@@ -492,5 +446,6 @@
 .product{
     width: 200px;
     display: block;
+    margin-top: 30px;
 }
 
