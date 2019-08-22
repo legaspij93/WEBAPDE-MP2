@@ -4,13 +4,15 @@ var gameSchema = mongoose.Schema({
     title: String,
     platform: String,
     genre: String,
-    date: Date,
-    rating: String
+    release: Date,
+    rating: String,
+    description: String,
+    link: String
 }) 
 
 var Game = mongoose.model("game", gameSchema)
 
-exports.create = function(user){
+exports.create = function(game){
     return new Promise(function(resolve, reject){
         console.log(game)
         var g = new Game(game)

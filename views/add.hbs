@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="stylesheet" href="/post.css">
+        <link rel="stylesheet" href="/add.css">
         <script src="/jQuery.js"></script>
         
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
@@ -32,7 +32,7 @@
                 <ul class="nav">
                     <a href="/game/games" name="games">Games</a>
                     <a href="/system" name="system">System</a>
-                    <a href="upload" name="upload">Upload</a>
+                    <a href="/post/upload" name="upload">Upload</a>
                     
                     <div class="nav-right">
                         <a href="/cart"><i class="fas fa-shopping-cart cart"></i></a>
@@ -57,74 +57,73 @@
                 <div class="main-body-bg"></div>
                 
                 <div class="checkout-header">
-                    <span class="checkout-header-label">Post Details</span>
-                    {{!-- <span class="shipping-header-label">Rental Details</span> --}}
+                    <span class="checkout-header-label">Add a New Game</span>
                 </div>
                 
-<!--                <div class="checkout-body">-->
                     <div class="title-label">Title</div>
-                    <div class="region-label">Region</div>
-                    <div class="price-label">Price</div>
-                    <div class="description-label">Description</div>
-                    {{!-- <div class="region-label">Region</div> --}}
-                    {{!-- <div class="courier-label">Courier</div> --}}
-                    {{!-- <div class="period-label">Rental Period</div> --}}
-                    {{!-- <div class="price-label">Price</div> --}}
-                    <div class="rent-start-label">Rent Start</div>
-                    <div class="rent-end-label">Rent End</div>
-                    <div class="new-game">Is your game not on our database? 
-                        <a class="new-game-link" href="/game/new-game">Click here to add it now!</a>
-                    </div>
-                    <div class="php">Php</div>
+                    <div class="platform-label">Platform</div>
+                    <div class="genre-label">Genre</div>
+                    <div class="description-label">Game Description</div>
+                    <div class="rating-label">Rating</div>
+                    <div class="release-label">Release Date</div>
+                    <div class="link-label">Link to Photo:</div>
                 
-                        <form>
+                        <form action="/game/add-game" method="post">
                             <div class="title-input">
                                 <input class="title" type="text" name="title">
                             </div>
                             
-                            <div class="region-input">
-                                <select class="region" name="region">
-                                    <option disabled selected value>Select Region</option>
-                                    <option>NSTC-J (Japan and Asia)</option>
-                                    <option>NSTC-U (North and South America)</option>
-                                    <option>PAL (Europe, New Zealand and Australia)</option>
-                                    <option>NSTC-C (China)</option>
+                            <div class="platform-input">
+                                <select class="platform" name="platform">
+                                    <option disabled selected value>Select Platform</option>
+                                    <option value="ps4">PS4</option>
+                                    <option value="xbox">Xbox One</option>
+                                    <option value="switch">Switch</option>
                                 </select>
                             </div>
-
-                            <div class="price-input"></div>
-                                <input class="price" type="number" name="price">
+                        
+                            <div class="genre-input">
+                                <select class="genre" type="text" name="genre">
+                                    <option disabled selected value>Select Genre</option>
+                                    <option>Action/Adventure</option>
+                                    <option>Arcade/Puzzle</option>
+                                    <option>Family/Party</option>
+                                    <option>Fighting</option>
+                                    <option>Music/Dance</option>
+                                    <option>Racing</option>
+                                    <option>RPG</option>
+                                    <option>Shooter</option>
+                                </select>
                             </div>
                             
                             <div class="description-input">
                                 <input class="description" type="text" name="description">
                             </div>
 
-                            <div class="rent-start-input">
-                                <input class="rent-start" type="date" name="rent-start">
+                            <div class="rating-input">
+                                <select class="rating" type="text" name="rating">
+                                    <option disabled selected value >Select Rating</option>
+                                    <option>Adults</option>
+                                    <option>Childhood</option>
+                                    <option>Everyone</option>
+                                    <option>Everyone 10+</option>
+                                    <option>Mature 17+</option>
+                                    <option>Not Rated</option>
+                                    <option>Rating Pending</option>
+                                    <option>Teen</option>
+                                </select>
                             </div>
 
-                            <div class="rent-end-input">
-                                <input class="rent-end" type="date" name="rent-end">
+                            <div class="release-input">
+                                <input class="release" type="date" name="release">
                             </div>
-                            {{!-- <div class="region-input">
-                                <input class="region" type="text" name="region">
-                            </div> --}}
-
-                            {{!-- <div class="courier-input">
-                                <input class="courier" type="text" name="courier">
-                            </div> --}}
                             
-                            <div class="period-input">
-                                <input class="period" type="text" name="period">
+                            <div class="link-input">
+                                <input class="link" type="text" name="link">
                             </div>
-                        
-                            {{!-- <div class="price-input">
-                                <input class="price" type="text" name="price">
-                            </div> --}}
 
-                            <div class="checkout-button-container">
-                                <input type="submit" value="Upload" class="upload">
+                            <div class="add-button-container">
+                                <input type="submit" value="Add" class="add">
                             </div>
                         </form>
             
