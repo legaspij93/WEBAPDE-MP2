@@ -7,7 +7,8 @@ var gameSchema = mongoose.Schema({
     release: Date,
     rating: String,
     description: String,
-    link: String
+    link: String,
+    clicks: Number
 }) 
 
 var Game = mongoose.model("game", gameSchema)
@@ -35,3 +36,13 @@ exports.get = function(id){
         })
     })
 }
+
+exports.getAll = function(){
+    return new Promise(function(resolve, reject){
+      Game.find().then((games)=>{
+        resolve(games)
+      }, (err)=>{
+        reject(err)
+      })
+    })
+  }

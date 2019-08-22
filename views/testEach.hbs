@@ -1,0 +1,17 @@
+<html>
+    {{!-- <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    </head> --}}
+
+    <body>
+        {{#each games}}
+        <div>
+            Id: {{_id}}<br>
+            Title: {{title}}<br>
+            Image: <a href="/game/vg/{{_id}}"><img src="{{link}}"></a>
+        </div>
+        {{/each}}
+    </body>
+
+</html>

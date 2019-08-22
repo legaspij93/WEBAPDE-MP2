@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/reddeadps4.css">
+        <script src="/jQuery.js"></script>
+        {{!-- <meta charset="UTF-8"> --}}
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    </head>
+
+    <body>
+        <div class="dashboard-container">
+            <div id="nav-bar">
+                <!-----------------------NAVBAR JS----------------------------------->
+                <script>
+                    window.onscroll = function(){
+                        stickyBar()
+                    };
+
+                    var navbar = document.getElementById("nav-bar");
+                    var sticky = navbar.offsetTop;
+
+                    function stickyBar(){
+                        if(window.pageYOffset > sticky){
+                            navbar.classList.add("sticky")
+                        }else{
+                            navbar.classList.remove("sticky")
+                        }
+                    }
+                </script>
+<!-------------------------------------------------------------------->
+                <img src="/image/LOGO2.png" class="logo">
+                
+                <ul class="nav">
+                    <a href="/games" name="games">Games</a>
+                    <a href="/system" name="system">System</a>
+                    <a href="/upload" name="upload">Upload</a>
+
+                    
+                    <div class="nav-right">
+                        <div class="search-container">
+                            <input class="search-box" type="text" name="search" placeholder=" Search..." >
+                            <a class="search-btn" href="#">
+                                <i class="fas fa-search"></i>
+                            </a>
+                        </div>
+                        <a href="/cart"><i class="fas fa-shopping-cart cart"></i></a>
+                        <a href="/profile" class="profile" name="system">Profile</a>
+                    </div>
+                </ul>
+   
+            </div>
+
+            <div class="content-container">
+                <div class="details-container">
+                    <div class="product-image-container">
+                        <img class="product-image" src="{{game.link}}">
+                    </div>
+
+                    <div class="product-container">
+                        <div class="product-name"><span>{{game.title}}</span></div>
+
+                        <div class="details">
+                            <span id="release-label">Released</span>
+                            <span id="release">{{release}}</span>
+                            <span id="genre-label">Genre</span>
+                            <span id="genre"><a href="#" style="color: #fd8f4b; font-family: ralewayregular" >{{game.genre}}</a></span>
+                        </div>
+
+                        <div class="rating-container">
+                            <div class="rating-label">Rating</div>
+                            <div class="rating">{{game.rating}}</div>
+                        </div>
+
+                        <div class="description-container">
+                            <div class="description-label">Description</div>
+                            <p>{{game.description}}</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="body-container">
+
+                    <div class="available-label">Available for Rent</div>
+
+                    <div class="available-container">
+                        <div class="product" id="1">
+                            <img src="/image/Spiderman/ps4.jpg" class="available-image">
+                                <div class="available-details">
+                                    <div class="product-title" >Marvel's Spider-Man</div>
+                                    <div class="price">₱500</div>
+                                    <a href="/rental"><div class="rent-button">
+                                        RENT
+                                        </div></a>
+                                </div>
+                        </div>
+                        <div class="product" id="2">
+                            <img src="/image/Spiderman/ps4.jpg" class="available-image">
+                                <div class="available-details">
+                                    <div class="product-title">Marvel's Spider-Man</div>
+                                    <div class="price">₱700</div>
+                                     <a href="/rental2"><div class="rent-button">
+                                        RENT
+                                         </div></a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
