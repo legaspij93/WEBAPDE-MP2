@@ -288,7 +288,7 @@
 
 .choosing{
     position: absolute;
-    left: 70%;
+    left: 73%;
     display: flex;
 
 }
@@ -393,14 +393,16 @@
     flex-direction: row;
     margin-top: 15px;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-content: flex-start;
+    flex-grow: 1;
 
 }
 
 .popular-games,.product-title,.release-date{
     font-family: ralewayregular;
-    text-align: center;  
+    text-align: center; 
+    
 }
 
 .recent-releases,.product-title,.release-date{
@@ -492,5 +494,6 @@
 .product{
     width: 200px;
     display: block;
+    margin: 5px;
 }
 
