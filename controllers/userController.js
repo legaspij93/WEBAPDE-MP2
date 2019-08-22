@@ -47,4 +47,14 @@ router.get("/loginpage", function(req,res){
     res.render("loginscreen.hbs")
 })
 
+router.get("/profile", function(req,res){
+    currUser = req.session.username
+    User.getUser(currUser).then((newUser)=>{
+        console.log(newUser)
+        res.render("profile.hbs", {
+            newUser
+        })
+    })
+})
+
 module.exports = router
