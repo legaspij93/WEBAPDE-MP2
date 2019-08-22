@@ -8,7 +8,7 @@
     
     <body>
         <div class="shipping-container">
-                        <div id="nav-bar">
+            <div id="nav-bar">
 <!-----------------------NAVBAR JS----------------------------------->
                 <script>
                     window.onscroll = function(){
@@ -58,32 +58,60 @@
                     <span class="shipping-header-label">Shipping</span>
                 </div>
                 
+                <div class="checkout-header">
+                    <span class="checkout-header-label">Payment</span>
+                </div>
+                
                 
 <!--                <div class="checkout-body">-->
                     <div class="address-label">Address</div>
-                    <div class="name-label">Full Name</div>
-                    <div class="country-label">Country</div>
+                    <div class="full-name-label">Full Name</div>
                     <div class="postal-label">Postal Code</div>
+                    <div class="cardnum-label">Card Number</div>
+                    <div class="name-label">Name on Card</div>
+                    <div class="date-label">Expire Date</div>
+                    <div class="cvv-label">CVV</div>
+                
                         <form action="checkout">
                             <div class="address-input">
                                 <input class="address" type="text" name="address">
+                            </div>
+
+                            <div class="full-name-input">
+                                <input class="full-name" type="text" name="name">
+                            </div>
+                        
+                            <div class="postal-input">
+                                <input class="postal" type="text" name="postal">
+                            </div>
+                            
+                            <div class="cardnum-input">
+                                <input class="cardnumber" type="text" name="cardnumber">
                             </div>
 
                             <div class="name-input">
                                 <input class="name" type="text" name="name">
                             </div>
                             
-                            <div class="country-input">
-                                <input class="country" type="text" name="country">
+                            <div class="date-input">
+                                <input class="date" type="date" name="date">
                             </div>
                         
-                            <div class="postal-input">
-                                <input class="postal" type="text" name="postal">
+                            <div class="cvv-input">
+                                <input class="cvv" type="text" name="cvv">
                             </div>
 
-                            <div class="shipping-button-container">
-                                <input type="submit" value="Proceed" class="subbutton checkout-button">
+                            <div class="checkout-button-container">
+                                <input type="submit" value="Complete Order" class="subbutton checkout-button">
                             </div>
+                            
+                            <script>
+                                    $(".checkout-button-container").click(function(){
+                                        alert("Transaction successful!");
+                                        console.log("blejh");
+                                    });
+                            </script>
+                            
                         </form>
             
                 <div class="back">
@@ -92,26 +120,8 @@
 <!--                </div>-->
             </div>
             
-            <div class="cart-body">
-                <div class="cart-body-bg"></div>
-                
-<!--                <div class="cart-header">-->
-                    <span class="cart-header-label">My Cart</span>
-<!--                </div>-->
-                
-                <div class="table-header">
-                    <span class="sTitle">TITLE</span> 
-                    <span class="sCost">COST</span>
-                </div>
-                        
-                <div class="product-container">
-                    <div class="product">
-                        <a class="pTitle" href="/rental">Spiderman PS4</a>
-                        <span class="pCost">500</span>
-                    </div>
-                </div>
-                
-            </div>
+
+            
         </div>
     </body>
 </html>

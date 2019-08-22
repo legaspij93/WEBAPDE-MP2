@@ -178,8 +178,8 @@
 /*END OF NAVBAR*/
 
 .main-body{
-    height: 31.25em;
-    width: 36em;
+    height: 32em;
+    width: 80em;
     color: white;
     position: fixed;
     top: 20%;
@@ -192,8 +192,8 @@
 }
 
 .main-body-bg{
-    height: 31.25em;
-    width: 36em;
+    height: 32em;
+    width: 80em;
     background-color: black;
     opacity: 0.85;
     color: white;
@@ -205,10 +205,22 @@
 .shipping-header{
     position: absolute;
     top: 6%;
-    left: 4%;
+    left: 5%;
 }
 
 .shipping-header-label{
+    font-size: 30px;
+    font-family: ralewaysemibold;
+    border: none;
+}
+
+.checkout-header{
+    position: absolute;
+    top: 6%;
+    left: 56%;
+}
+
+.checkout-header-label{
     font-size: 30px;
     font-family: ralewaysemibold;
     border: none;
@@ -249,26 +261,17 @@
 
 .address-label{
     position: fixed;
-    top: 35%;
-    left: 5%;
-    font-size: 25px;
-    color: white;
-    font-family: ralewayregular;
-}
-
-.name-label{
-    position: fixed;
     top: 51%;
-    left: 5%;
+    left: 7%;
     font-size: 25px;
     color: white;
     font-family: ralewayregular;
 }
 
-.country-label{
+.full-name-label{
     position: fixed;
-    top: 66%;
-    left: 5%;
+    top: 35%;
+    left: 7%;
     font-size: 25px;
     color: white;
     font-family: ralewayregular;
@@ -277,7 +280,43 @@
 .postal-label{
     position: fixed;
     top: 66%;
-    left: 25%;
+    left: 7%;
+    font-size: 25px;
+    color: white;
+    font-family: ralewayregular;    
+}
+
+.cardnum-label{
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    font-size: 25px;
+    color: white;
+    font-family: ralewayregular;
+}
+
+.name-label{
+    position: fixed;
+    top: 51%;
+    left: 50%;
+    font-size: 25px;
+    color: white;
+    font-family: ralewayregular;
+}
+
+.date-label{
+    position: fixed;
+    top: 66%;
+    left: 50%;
+    font-size: 25px;
+    color: white;
+    font-family: ralewayregular;
+}
+
+.cvv-label{
+    position: fixed;
+    top: 66%;
+    left: 65%;
     font-size: 25px;
     color: white;
     font-family: ralewayregular;    
@@ -292,7 +331,49 @@
     background: transparent;
     padding: 1px 20px;
     top: 40%;
-    left: 5%;
+    left: 7%;
+    color: white;
+    font-family: ralewayregular;
+}
+
+.full-name{
+    width: 32.1875em;
+    height: 2.5em;
+    border: none;
+    border-bottom: 2px solid #fff;
+    position: fixed;
+    background: transparent;
+    padding: 1px 20px;
+    top: 56%;
+    left: 7%;
+    color: white;
+    font-family: ralewayregular;
+}
+
+
+.postal{
+    width: 15em;
+    height: 2.5em;
+    border: none;
+    border-bottom: 2px solid #fff;
+    position: fixed;
+    background: transparent;
+    padding: 1px 20px;
+    top: 72%;
+    left: 7%;
+    color: white;
+}
+
+.cardnumber{
+    width: 32.1875em;
+    height: 2.5em;
+    border: none;
+    border-bottom: 2px solid #fff;
+    position: fixed;
+    background: transparent;
+    padding: 1px 20px;
+    top: 40%;
+    left: 50%;
     color: white;
     font-family: ralewayregular;
 }
@@ -306,26 +387,12 @@
     background: transparent;
     padding: 1px 20px;
     top: 56%;
-    left: 5%;
+    left: 50%;
     color: white;
     font-family: ralewayregular;
 }
 
-.country{
-    width: 11.25em;
-    height: 2.5em;
-    border: none;
-    border-bottom: 2px solid #fff;
-    position: fixed;
-    background: transparent;
-    padding: 1px 20px;
-    top: 72%;
-    left: 5%;
-    color: white;
-    font-family: ralewayregular;
-}
-
-.postal{
+.date{
     width: 15em;
     height: 2.5em;
     border: none;
@@ -334,14 +401,28 @@
     background: transparent;
     padding: 1px 20px;
     top: 72%;
-    left: 25%;
+    left: 50%;
+    color: white;
+    font-family: ralewayregular;
+}
+
+.cvv{
+    width: 15em;
+    height: 2.5em;
+    border: none;
+    border-bottom: 2px solid #fff;
+    position: fixed;
+    background: transparent;
+    padding: 1px 20px;
+    top: 72%;
+    left: 65%;
     color: white;
 }
 
 /*input[type=submit]*/
 .subbutton{
     height: 2.5em;
-    width: 10%;
+    width: 12%;
     background-color: #fd8f4b;
     opacity: 0.8;
 /*    background-image: -webkit-linear-gradient(right, #37AC99,#076FAD);*/
@@ -351,7 +432,7 @@
     border-style: none;
     position: fixed;
     top: 80%;
-    left: 28%;
+    left: 66%;
     font-family: ralewayregular;
 }
 
@@ -362,8 +443,8 @@
 
 .back{
     position: fixed;
-    top: 80%;
-    left: 5%;
+    top: 82%;
+    left: 55%;
 }
 
 .back-link{
