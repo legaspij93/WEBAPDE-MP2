@@ -85,26 +85,20 @@
                     <div class="available-label">Available for Rent</div>
 
                     <div class="available-container">
+
+                        {{#each posts}}
                         <div class="product" id="1">
-                            <img src="/image/Spiderman/ps4.jpg" class="available-image">
+                            <img src="{{game.link}}" class="available-image">
                                 <div class="available-details">
-                                    <div class="product-title" >Marvel's Spider-Man</div>
-                                    <div class="price">₱500</div>
+                                    <div class="product-title" >{{game.title}}</div>
+                                    <div class="price">{{post.cost}}</div>
                                     <a href="/rental"><div class="rent-button">
                                         RENT
                                         </div></a>
                                 </div>
                         </div>
-                        <div class="product" id="2">
-                            <img src="/image/Spiderman/ps4.jpg" class="available-image">
-                                <div class="available-details">
-                                    <div class="product-title">Marvel's Spider-Man</div>
-                                    <div class="price">₱700</div>
-                                     <a href="/rental2"><div class="rent-button">
-                                        RENT
-                                         </div></a>
-                                </div>
-                        </div>
+                        {{/each}}
+
                     </div>
                 </div>
             </div>
