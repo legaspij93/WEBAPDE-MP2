@@ -60,14 +60,6 @@
     overflow-x: hidden;
 }
 
-.content-container{
-    background-color: #333;
-    height: 100%;
-    margin: 0px;
-    display: block;
-}
-
-
 #nav-bar{
     height: 5em;
     background-color: #737373;
@@ -178,27 +170,25 @@
 
 .main-body{
     height: 100%;
-    width: 100%;
+    width: 90%;
     color: white;
     position: fixed;
     top: 20%;
-    left: 4%;  
-/*
-    height: 100%;
-    width: 100%;
-    display: block;
-*/
+    left: 18%;  
+/*    align-content: center;*/
 }
 
 .main-body-bg{
     height: 75%;
-    width: 90%;
+    width: 65%;
     background-color: black;
     opacity: 0.85;
     color: white;
     position: fixed;
+/*
     top: 20%;
-    left: 4%;
+    left: 17%;
+*/
 }
 
 .checkout-header{
@@ -213,38 +203,11 @@
     border: none;
 }
 
-.shipping-body{
-    height: 31.25em;
-    width: 37.5em;
-    color: white;
-    position: fixed;
-    top: 20%;
-    left: 50%;  
-}
-
-.shipping-body-bg{
-    height: 31.25em;
-    width: 37.5em;
-    background-color: black;
-    opacity: 0.85;
-    color: white;
-    position: fixed;
-    top: 20%;
-    left: 50%;
-}
-/*
-
-.main-body{
-    height: 100%;
-    width: 100%;
-    display: block;
-}
-*/
 
 .title-label{
     position: fixed;
     top: 40%;
-    left: 8%;
+    left: 22%;
     font-size: 25px;
     color: white;
     font-family: ralewayregular;
@@ -253,29 +216,11 @@
 .description-label{
     position: fixed;
     top: 60%;
-    left: 8%;
+    left: 22%;
     font-size: 25px;
     color: white;
     font-family: ralewayregular;
 }
-
-/* .region-label{
-    position: fixed;
-    top: 51%;
-    left: 8%;
-    font-size: 25px;
-    color: white;
-    font-family: ralewayregular;
-} */
-
-/* .price-label{
-    position: fixed;
-    top: 51%;
-    left: 23%;
-    font-size: 25px;
-    color: white;
-    font-family: ralewayregular;    
-} */
 
 .title{
     width: 32.1875em;
@@ -286,7 +231,7 @@
     background: transparent;
     padding: 1px 20px;
     top: 45%;
-    left: 8%;
+    left: 22%;
     color: white;
     font-family: ralewayregular;
 }
@@ -300,48 +245,40 @@
     background: transparent;
     padding: 1px 20px;
     top: 66%;
-    left: 8%;
+    left: 22%;
     color: white;
     font-family: ralewayregular;
 }
-
-/* .region{
-    width: 12.25em;
-    height: 2.5em;
-    border: none;
-    border-bottom: 2px solid #fff;
+.price-label{
     position: fixed;
-    background: transparent;
-    padding: 1px 20px;
-    top: 56%;
-    left: 8%;
+    top: 60%;
+    left: 60%;
+    font-size: 25px;
     color: white;
-    font-family: ralewayregular;
-} */
+    font-family: ralewayregular; 
+}
 
 .price{
-    width: 13.5em;
+    width: 13em;
     height: 2.5em;
     border: none;
     border-bottom: 2px solid #fff;
     position: fixed;
     background: transparent;
     padding-left: 2px;
-    /* padding: 1px 20px; */
-    top: 45%;
-    left:73%;
+    top: 65%;
+    left: 61.2%;
     color: white;
 }
 
 .php{
-    width: 2em;
-    height: 2.5em;
+    font-size: 24px;
     border: none;  
     position: fixed;
     background: transparent;
     padding: 1px 20px;
-    top: 46%;
-    left: 69%;
+    top: 66%;
+    left: 58.8%;
     color: white;
 }
 
@@ -359,82 +296,9 @@
     top: 85%;
     left: 33%;
     font-family: ralewayregular;
-    transition: 0.4s;
-    transform-style: preserve-3d;
-    perspective: 800px;
+
 }
 
-.back{
-    position: fixed;
-    top: 85%;
-    left: 5%;
-}
-
-.back-link{
-    color: gray;
-    font-size: 20px;
-}
-
-.cart-header{
-    position: absolute;
-    top: 4%;
-    left: 4%;
-}
-
-.shipping-header-label{
-    font-size: 30px;
-    font-family: ralewaysemibold;
-    border: none;
-    left: 52%;
-    top: 26%;
-    color: white;
-    position: fixed;
-}
-
-.shipping-body{
-    width: auto;
-    height: 40.625em; 
-    margin: 20px;
-    display: block;
-    color: white;
-    font-family: ralewaysemibold;
-    background-color: lightgray;
-}
-
-.table-header{
-    border-top-color: white;
-    border-top-width: thin;
-    border-top-style: solid;
-    top: 31%;
-    padding-top: 6px;
-    width: 41%;
-    position: fixed;
-    padding-bottom: 15px;
-}
-
-
-.sTitle{
-    margin-left: 15%;
-    margin-top: 1%;
-    font-size: 20px;
-}
-.sCost{
-    margin-left: 45%;
-    font-size: 20px;
-}
-
-.pTitle{
-    font-size: 20px;
-    width: 40%;
-    margin-left: 10%;
-    margin-top: 1%;
-    color: white;
-}
-
-.pCost{
-    margin-left: 36%;
-    font-size: 20px;        
-}
 
 .product-container{
     position: fixed;
@@ -443,71 +307,16 @@
 border-top-width: thin;
 }
 
-/*
-.confirm-checkout{
-    margin-top: 40%;
-    margin-left: 80%;
-    border-radius: 50px;
-    background-color: #fd8f4b;
-    width: 15%;
-    font-family: ralewayregular;
-    font-size: 25px;
-    text-align: center;
-}*/
-
 .region-label{
     position: fixed;
     top: 40%;
-    left: 48%;
+    left: 60%;
+    left: 60%;
     font-size: 25px;
     color: white;
     font-family: ralewayregular;
 }
 
-.rent-start-label{
-    position: fixed;
-    top: 60%;
-    left: 48%;
-    font-size: 25px;
-    color: white;
-    font-family: ralewayregular;
-}
-
-.rent-end-label{
-    position: fixed;
-    top: 60%;
-    left: 70%;
-    font-size: 25px;
-    color: white;
-    font-family: ralewayregular;
-}
-
-/* .courier-label{
-    position: fixed;
-    top: 51%;
-    left: 52%;
-    font-size: 25px;
-    color: white;
-    font-family: ralewayregular;
-} */
-
-/* .period-label{
-    position: fixed;
-    top: 35%;
-    left: 65%;
-    font-size: 25px;
-    color: white;
-    font-family: ralewayregular;
-} */
-
-.price-label{
-    position: fixed;
-    top: 40%;
-    left: 70%;
-    font-size: 25px;
-    color: white;
-    font-family: ralewayregular; 
-}
 
 .region{
     width: 15em;
@@ -518,79 +327,19 @@ border-top-width: thin;
     background: transparent;
     padding: 1px 20px;
     top: 45%;
-    left: 48%;
-    color: white;
+    left: 60%;
+/*    color: white;*/
     font-family: ralewayregular;
 }
 
-.rent-start{
-    width: 15em;
-    height: 2.5em;
-    border: none;
-    border-bottom: 2px solid #fff;
-    position: fixed;
-    background: transparent;
-    padding: 1px 20px;
-    top: 65%;
-    left: 48%;
-    color: white;
-    font-family: ralewayregular;
+select{
+    color: white; 
 }
 
-.rent-end{
-    width: 16.5em;
-    height: 2.5em;
-    border: none;
-    border-bottom: 2px solid #fff;
-    position: fixed;
-    background: transparent;
-    padding: 1px 20px;
-    top: 65%;
-    left: 70%;
-    color: white;
-    font-family: ralewayregular;
+select option {
+    color: black;
 }
 
-/* .courier{
-    width: 32.1875em;
-    height: 2.5em;
-    border: none;
-    border-bottom: 2px solid #fff;
-    position: fixed;
-    background: transparent;
-    padding: 1px 20px;
-    top: 56%;
-    left: 52%;
-    color: white;
-    font-family: ralewayregular;
-} */
-
-/* .period{
-    width: 11.25em;
-    height: 2.5em;
-    border: none;
-    border-bottom: 2px solid #fff;
-    position: fixed;
-    background: transparent;
-    padding: 1px 20px;
-    top: 72%;
-    left: 52%;
-    color: white;
-    font-family: ralewayregular;
-} */
-
-/* .price{
-    width: 15em;
-    height: 2.5em;
-    border: none;
-    border-bottom: 2px solid #fff;
-    position: fixed;
-    background: transparent;
-    padding: 1px 20px;
-    top: 72%;
-    left: 72%;
-    color: white;
-} */
 
 .upload{
     height: 2.5em;
@@ -604,7 +353,7 @@ border-top-width: thin;
     border-style: none;
     position: fixed;
     top: 79%;
-    left: 76%;
+    left: 63%;
     font-family: ralewayregular;
 }
 
@@ -617,7 +366,7 @@ border-top-width: thin;
     color: gray;
     position: fixed;
     top: 82%;
-    left: 8%;
+    left: 22%;
     font-family: ralewayregular;
 }
 

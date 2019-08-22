@@ -8,7 +8,7 @@
     
     <body>
         <div class="checkout-container">
-                        <div id="nav-bar">
+            <div id="nav-bar">
 <!-----------------------NAVBAR JS----------------------------------->
                 <script>
                     window.onscroll = function(){
@@ -58,24 +58,16 @@
                 
                 <div class="checkout-header">
                     <span class="checkout-header-label">Post Details</span>
-                    {{!-- <span class="shipping-header-label">Rental Details</span> --}}
                 </div>
                 
-<!--                <div class="checkout-body">-->
                     <div class="title-label">Title</div>
                     <div class="region-label">Region</div>
                     <div class="price-label">Price</div>
                     <div class="description-label">Description</div>
-                    {{!-- <div class="region-label">Region</div> --}}
-                    {{!-- <div class="courier-label">Courier</div> --}}
-                    {{!-- <div class="period-label">Rental Period</div> --}}
-                    {{!-- <div class="price-label">Price</div> --}}
-                    <div class="rent-start-label">Rent Start</div>
-                    <div class="rent-end-label">Rent End</div>
                     <div class="new-game">Is your game not on our database? 
                         <a class="new-game-link" href="/game/new-game">Click here to add it now!</a>
                     </div>
-                    <div class="php">Php</div>
+                    <div class="php">₱</div>
                 
                         <form>
                             <div class="title-input">
@@ -92,7 +84,7 @@
                                 </select>
                             </div>
 
-                            <div class="price-input"></div>
+                            <div class="price-input">
                                 <input class="price" type="number" name="price">
                             </div>
                             
@@ -100,40 +92,15 @@
                                 <input class="description" type="text" name="description">
                             </div>
 
-                            <div class="rent-start-input">
-                                <input class="rent-start" type="date" name="rent-start">
-                            </div>
-
-                            <div class="rent-end-input">
-                                <input class="rent-end" type="date" name="rent-end">
-                            </div>
-                            {{!-- <div class="region-input">
-                                <input class="region" type="text" name="region">
-                            </div> --}}
-
-                            {{!-- <div class="courier-input">
-                                <input class="courier" type="text" name="courier">
-                            </div> --}}
-                            
                             <div class="period-input">
                                 <input class="period" type="text" name="period">
                             </div>
-                        
-                            {{!-- <div class="price-input">
-                                <input class="price" type="text" name="price">
-                            </div> --}}
 
                             <div class="checkout-button-container">
                                 <input type="submit" value="Upload" class="upload">
                             </div>
-                        </form>
+                    </form>
             
-<!--
-                <div class="back">
-                    <a href="/cart" class="back-link">Back to Shipment</a>
-                </div>
--->
-<!--                </div>-->
             </div>
         </div>
     </body>
