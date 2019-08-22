@@ -11,19 +11,23 @@ const urlencoder = bodyparser.urlencoded({
 
 router.use(urlencoder)
 
-router.post("/upload", function(req, res){
+router.post("/new-post", function(req, res){
+    var username = req.session.username
+    var status = "Available"
+    console.log(username)
+
     var post = {
-        title: req.body.title,
-        user: req.session.username,
-        cost: req.body.cost,
-        status: "Available",
-        region: req.body.region,
-        rentStart: req.body.rentStart,
-        rentEnd: req.body.rentEnd
+        title : req.body.title,
+        user : username,
+        price : req.body.price,
+        status : status,
+        region : req.body.region,
+        description : req.body.description
     }
+    
     Post.create(post).then((post)=>{
         console.log(post)
-        res.render("upload.hbs")
+        res.redirect("/upload")
     }, (error)=>{
         res.sendFile(error)
     })
@@ -34,6 +38,7 @@ router.get("/available", function(req, res){
 })
 
 router.get("/upload", function(req, res){
+    console.log(req.session.username)
     res.render("upload.hbs")
 })
 

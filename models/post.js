@@ -3,16 +3,15 @@ const mongoose = require("mongoose")
 var postSchema = mongoose.Schema({
     title: String,
     user: String,
-    cost: Number,
+    price: Number,
     status: String,
     region: String,
-    rentStart: Date,
-    rentEnd: Date
+    description: String
 }) 
 
 var Post = mongoose.model("post", postSchema)
 
-exports.create = function(user){
+exports.create = function(post){
     return new Promise(function(resolve, reject){
         console.log(post)
         var p = new Post(post)

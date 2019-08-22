@@ -34,6 +34,7 @@ router.post("/login", function(req, res){
     User.authenticate(user).then((newUser)=>{
         if(newUser){
             req.session.username = user.username
+            console.log(req.session.username)
             res.redirect("/game/games")
             // res.render("dashboard.hbs")
         }
