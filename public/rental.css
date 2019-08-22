@@ -60,6 +60,7 @@
     max-width: 100%;
     position: relative;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 
@@ -165,7 +166,7 @@
     width: 100%;
 }
 
-.sticky + .content-container{
+.sticky + .rental-container{
     padding-top: 80px;
 }
 
@@ -180,7 +181,7 @@
 
 .rental-post{
     width: auto;
-    height: 650px; 
+    height: 100%; 
     margin: 20px;
     display: block;
 }
@@ -375,38 +376,6 @@
     font-family: ralewayregular;
     padding-left: 20px;
 
-}
-
-.courier-container{
-    display: flex;
-    padding-top: 10px;
-}
-
-.courier-label{
-    font-size: 20px;
-    color: #efadd7;
-}
-
-.courier{
-    font-size: 20px;
-    font-family: ralewayregular;
-    padding-left: 20px;
-}
-
-.period-container{
-    display: flex;
-    padding-top: 10px;
-}
-
-.period-label{
-    font-size: 20px;
-    color: #efadd7;
-}
-
-.period{
-    font-size: 20px;
-    font-family: ralewayregular;
-    padding-left: 20px;
 }
 
 .price-container{
