@@ -27,4 +27,8 @@ router.post("/upload", function(req, res){
     })
 })
 
+router.get("/games", function(req,res){
+    res.render("dashboard.hbs")
+})
+
 module.exports = router

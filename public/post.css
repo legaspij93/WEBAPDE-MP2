@@ -554,3 +554,16 @@ border-top-width: thin;
     background-color: #f66d18;
     cursor: pointer;
 }
+
+.new-game{
+    color: gray;
+    position: fixed;
+    top: 82%;
+    left: 8%;
+    font-family: ralewayregular;
+}
+
+.new-game-link{
+    color: white;
+    font-family: ralewayregular;
+}

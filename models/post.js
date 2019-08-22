@@ -4,7 +4,10 @@ var postSchema = mongoose.Schema({
     title: String,
     user: String,
     cost: Number,
-    status: String
+    status: String,
+    region: String,
+    rentStart: Date,
+    rentEnd: Date
 }) 
 
 var Post = mongoose.model("post", postSchema)
