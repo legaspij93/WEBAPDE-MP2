@@ -206,11 +206,43 @@
     position: absolute;
     top: 8%;
     left: 30%;
+    font-size: 22px;
 }
 
 .username{
-    font-size: 26px;
+    font-size: 22px;
 }
+
+.location-container{
+    display: flex;
+    margin-top: 10px;
+}
+
+.location-label{
+    font-size: 22px;  
+}
+
+.location{
+    font-family: ralewayregular;
+    font-size: 22px;
+    margin-left: 15px;
+}
+
+.email-container{
+    display: flex;
+    margin-top: 10px;
+}
+
+.email-label{
+    font-size: 22px;  
+}
+
+.email{
+    font-family: ralewayregular;
+    font-size: 22px;
+    margin-left: 15px;
+}
+
 
 .location-container{
     display: flex;
