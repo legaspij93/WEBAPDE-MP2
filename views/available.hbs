@@ -84,22 +84,34 @@
                 </div>
                 
                 <div class="body-container">
+                    <div class="details-container">
+                        
+                        <div class="product-container">
+                            <div class="product-name"><span>{{title}}</span></div>
+
+                        </div>
+                        
+                </div>
+                
+                <div class="body-container">
                     <div class="after-details">
                         <div class="available-label">Available for Rent</div>
                         
                         <div class="available-container">
                             
+                            {{#each posts}}
                             <div class="product" id="1">
-                                <img src="/image/Spiderman/ps4.jpg" class="available-image">
+                                <img src="{{link}}" class="available-image">
                                 <div class="available-details">
-                                    <div class="product-title" >Marvel's Spider-Man</div>
-                                    <div class="price">₱500</div>
+                                    <div class="product-title" >{{title}}</div>
+                                    <div class="price">{{price}}</div>
                                     <a href="/rental"><div class="rent-button">
                                         RENT
                                         </div></a>
                                 </div>
 
                             </div>
+                            {{/each}}
                             
                             <div class="product" id="2">
                                 <img src="/image/Spiderman/ps4.jpg" class="available-image">

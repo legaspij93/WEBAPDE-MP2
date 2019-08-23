@@ -27,13 +27,13 @@ router.post("/new-post", function(req, res){
     
     Post.create(post).then((post)=>{
         console.log(post)
-        res.redirect("/upload")
+        res.redirect("upload")
     }, (error)=>{
         res.sendFile(error)
     })
 })
 
-router.post("/available", function(req, res){
+router.get("/available", function(req, res){
     res.render("available.hbs")
 })
 
