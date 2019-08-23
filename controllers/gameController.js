@@ -34,7 +34,11 @@ router.post("/add-game", function(req, res){
 })
 
 router.get("/games", function(req,res){
-    res.render("dashboard.hbs")
+    Game.getAll().then((games)=>{
+        res.render("dashboard.hbs", {
+            games
+        })
+    })
 })
 
 router.get("/new-game", function(req,res){
@@ -45,7 +49,7 @@ router.get("/vg/:id", function(req,res){
     console.log(req.params.id)
     Game.get(req.params.id).then((game)=>{
         console.log(game)
-        res.render("indivGame.hbs", {
+        res.render("spiderman.hbs", {
             game
         })
     })

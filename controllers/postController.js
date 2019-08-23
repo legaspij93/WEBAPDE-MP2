@@ -33,8 +33,8 @@ router.post("/new-post", function(req, res){
     })
 })
 
-router.get("/available", function(req, res){
-    res.render("spiderman.hbs")
+router.post("/available", function(req, res){
+    res.render("available.hbs")
 })
 
 router.get("/upload", function(req, res){

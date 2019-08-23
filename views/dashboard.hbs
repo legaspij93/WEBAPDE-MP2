@@ -107,12 +107,12 @@
                 </div>
                 
                 <div class="games-container">
-                    <div class="all-platforms-container">
+                    {{!-- <div class="all-platforms-container">
                         <span id="ps4"><a href="/system">PlayStation 4</a></span>
                         <span id="xbox"><a href="/xbox">XBOX</a></span>
                         <span id="switch"><a href="/switch">Nintendo Switch</a></span>
                         
-                    </div>
+                    </div> --}}
                     
                     <div class="label">
                         All Platforms Games
@@ -168,81 +168,20 @@
                     
                     <div class="popular-games">
                         
-                        
-                        <div class="product" id="spiderman">
-                            <a href="/spiderman"><img src="/image/Spiderman/ps4.jpg" class="product-image"></a>
+                        {{#each games}}
+                            {{!-- {{#if @index '<' 4}} --}}
+                                <div class="product">
+                                    <a href="/game/vg/{{_id}}"><img src="{{link}}" class="product-image"></a>
                             
-                            <div class="details">
-                                <div class="product-title">Marvel's Spider-Man</div>
-                                <div class="release-date">Released 9/7/2018</div>
-                                <a href="/post/available"><div class="rent-button">
-                                    RENT
-                                    </div></a>
-                            </div>
-
-                        </div>
-                        
-                        
-                        <div class="product" id="smash">
-                            <a href="/smash"><img src="/image/SmashUltimate/smash.jpg" class="product-image"></a>
-                            
-                            <div class="details">
-                                <div class="product-title">Super Smash Bros</div>
-                                <div class="release-date">Released 12/8/2018</div>
-                                <div class="rent-button">
-                                    RENT
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="product" id="botw">
-                            <a href="/botw"><img src="/image/BotW/botw.jpg" class="product-image"></a>
-                            
-                            <div class="details">
-                                <div class="product-title">The Legend of Zelda: Bre...</div>
-                                <div class="release-date">Released 3/3/2017</div>
-                                <div class="rent-button">
-                                    RENT
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="product" id="sekiro">
-                            <a href="/sekirop"><img src="/image/Sekiro/sekirops.jpg" class="product-image"></a> 
-                            <div class="details">
-                                <div class="product-title">Sekiro: Shadows Die Twice</div>
-                                <div class="release-date">Released 3/21/2019</div>
-                                <div class="rent-button">
-                                    RENT
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="product" id="acodyssey">
-                            <a href="/acx"><img src="/image/ACOdyseey/ACX.jpg" class="product-image"></a>
-                            <div class="details">
-                                <div class="product-title">Assassin's Creed Odyssey</div>
-                                <div class="release-date">Released 10/4/2018</div>
-                                <div class="rent-button">
-                                    RENT
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="product" id="nba2k19">
-                            <a href="/nbap"><img src="/image/NBA2K19/nbaps.jpg" class="product-image"></a>
-                            
-                            <div class="details">
-                                <div class="product-title">NBA 2K19</div>
-                                <div class="release-date">Released 9/10/2018</div>
-                                <div class="rent-button">
-                                    RENT
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
+                                    <div class="details">
+                                        <div class="product-title">{{title}}</div>
+                                        <div class="release-date">Released {{release}}</div>
+                                        <a href="/post/available"><div class="rent-button">
+                                        RENT</div></a>
+                                    </div>
+                                </div>    
+                            {{!-- {{/if}} --}}
+                        {{/each}}
                     </div>
 <!----------------------------------------------------------------------------------------->
                     <div class="header-title">
@@ -253,88 +192,20 @@
                     
                     
                     <div class="recent-releases">
-                        
-                        
-                        <div class="product" id="fire">
-                            <a href="/fire"><img src="/image/FE3H/fire.jpg" class="product-image"></a> 
+                        {{#each games}}
+                            {{!-- {{#if @index '<' 4}} --}}
+                                <div class="product">
+                                    <a href="/game/vg/{{_id}}"><img src="{{link}}" class="product-image"></a>
                             
-                            <div class="details">
-                                <div class="product-title">Fire Emblem Three Houses</div>
-                                <div class="release-date">Released 7/27/2019</div>
-                                <div class="rent-button">
-                                    RENT
-                                </div>
-                            </div>
-
-                        </div>
-                        
-                        
-                        <div class="product" id="sekiro">
-                            <a href="/sekirop"><img src="/image/Sekiro/sekirops.jpg" class="product-image"></a> 
-                            <div class="details">
-                                <div class="product-title">Sekiro: Shadows Die Twice</div>
-                                <div class="release-date">Released 3/21/2019</div>
-                                <div class="rent-button">
-                                    RENT
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="product" id="mario">
-                            <a href="/maker"><img src="/image/SuperMario/mario.jpg" class="product-image"></a> 
-                            
-                            <div class="details">
-                                <div class="product-title">Super Mario Maker 2</div>
-                                <div class="release-date">Released 6/29/2019</div>
-                                <div class="rent-button">
-                                    RENT
-                                </div>
-                            </div>
-
-                        </div>
-                        
-                        <div class="product" id="marvel">
-                            <a href="/marvel"><img src="/image/MarvelUA3/mua3.jpg" class="product-image"></a> 
-                            
-                            <div class="details">
-                                <div class="product-title">Marvel Ultimate Alliance 3</div>
-                                <div class="release-date">Released 7/20/2019</div>
-                                <div class="rent-button">
-                                    RENT
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="product" id="smash">
-                            <a href="/smash"><img src="/image/SmashUltimate/smash.jpg" class="product-image"></a>
-                            
-                            <div class="details">
-                                <div class="product-title">Super Smash Bros</div>
-                                <div class="release-date">Released 12/8/2018</div>
-                                <div class="rent-button">
-                                    RENT
-                                </div>
-                            </div>
-
-                        </div>
-
-                        
-                        <div class="product" id="rdr2">
-                            <a href="/rdr2p"><img src="/image/RDR2/rdrps.jpg" class="product-image"></a>
-                            
-                            <div class="details">
-                                <div class="product-title">Red Dead Redemption II</div>
-                                <div class="release-date">Released 10/30/2018</div>
-                                <div class="rent-button">
-                                    RENT
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
- 
+                                    <div class="details">
+                                        <div class="product-title">{{title}}</div>
+                                        <div class="release-date">Released {{release}}</div>
+                                        <a href="/post/available"><div class="rent-button">
+                                        RENT</div></a>
+                                    </div>
+                                </div>    
+                            {{!-- {{/if}} --}}
+                        {{/each}}
                     </div>
                     
                 </div>

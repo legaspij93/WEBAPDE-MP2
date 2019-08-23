@@ -32,9 +32,9 @@
                 <img src="/image/LOGO2.png" class="logo">
                 
                 <ul class="nav">
-                    <a href="/games" name="games">Games</a>
+                    <a href="/game/games" name="games">Games</a>
                     <a href="/system" name="system">System</a>
-                    <a href="/upload" name="upload">Upload</a>
+                    <a href="/post/upload" name="upload">Upload</a>
 
                     
                     <div class="nav-right">
@@ -45,7 +45,7 @@
                             </a>
                         </div>
                         <a href="/cart"><i class="fas fa-shopping-cart cart"></i></a>
-                        <a href="/profile" class="profile" name="system">Profile</a>
+                        <a href="/user/profile" class="profile" name="system">Profile</a>
                     </div>
                 </ul>
    
@@ -54,28 +54,30 @@
             <div class="content-container">             
                 <div class="details-container">
                     <div class="product-image-container">
-                        <img class="product-image" src="image/Spiderman/ps4.jpg">
+                        <img class="product-image" src="{{game.link}}">
                     </div>
                         
                     <div class="product-container">
-                        <div class="product-name"><span>Marvel's Spider-Man</span></div>
+                        <div class="product-name"><span>{{game.title}}</span></div>
                         
                         <div class="details">
                             <span id="release-label">Released</span>
-                            <span id="release">9/7/2018</span>
+                            <span id="release">{{game.release}}</span>
                             <span id="genre-label">Genre</span>
-                            <span id="genre"><a href="#" style="color: #fd8f4b; font-family: ralewayregular" >Action, Adventure</a></span>
+                            <span id="genre"><a href="#" style="color: #fd8f4b; font-family: ralewayregular" >{{game.genre}}</a></span>
                         </div>
                         
                         <div class="rating-container">
                             <div class="rating-label">Rating</div>
-                            <div class="rating">Teen</div>
+                            <div class="rating">{{game.rating}}</div>
                         </div>
                         
-                        <div class="rent-button-ctnr">
-                            <div class="rent-button">Available for Rent</div>
-                        </div>
-                        
+                        <form action="/post/available" method="post">
+                            <input type="hidden" value="{{game.rating}}" name="hiddenVal">
+                            <div class="rent-button-ctnr">
+                                <input type="submit" class="rent-button" value="Available for Rent">
+                            </div>
+                        </form>
                         
                         
                     </div>
@@ -87,7 +89,7 @@
                     
                     <div class="description-container">
                         <div class="description-label">Description</div>
-                        <p>After eight years behind the mask, Peter Parker is a crime-fighting master. Feel the full power of a more experienced Spider-Man with improvisational combat, dynamic acrobatics, fluid urban traversal, and environmental interactions. A rookie no longer, this is the most masterful Spider-Man you've ever played.</p>
+                        <p>{{game.description}}</p>
                     </div>
                     
 <!--
