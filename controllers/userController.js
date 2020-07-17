@@ -27,14 +27,14 @@ router.post("/register", function(req, res){
 
 router.post("/login", function(req, res){
     let user = {
-        username: req.body.username,
+        email: req.body.email,
         password: req.body.password
     }
     
     User.authenticate(user).then((newUser)=>{
         if(newUser){
-            req.session.username = user.username
-            console.log(req.session.username)
+            req.session.email = user.email
+            console.log(req.session.email)
             res.redirect("/game/games")
             // res.render("dashboard.hbs")
         }
