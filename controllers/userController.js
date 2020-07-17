@@ -13,7 +13,10 @@ router.use(urlencoder)
 
 router.post("/register", function(req, res){
     var user = {
-        username : req.body.username,
+        firstName : req.body.firstName,
+        lastName: req.body.lastName,
+        region: req.body.region,
+        email: req.body.email,
         password : req.body.password
     }
     User.create(user).then((user)=>{
