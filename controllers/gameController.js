@@ -41,6 +41,14 @@ router.get("/games", function(req,res){
     })
 })
 
+router.get("/gamelist", function(req,res){
+    Game.getAll().then((games)=>{
+        res.render("gameList.hbs", {
+            games
+        })
+    })
+})
+
 router.get("/new-game", function(req,res){
     res.render("add.hbs")
 })

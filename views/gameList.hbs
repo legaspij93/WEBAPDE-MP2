@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/gameList.css">
+        <script src="/jQuery.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    </head>
+    
+    <body>
+        <div class="page-container">
+
+            <div id="nav"></div>
+            <script>
+                $.get("/nav.html", function(data){
+                    $("#nav").replaceWith(data).stop();
+                });
+            </script>
+            
+            <div class="content-container">                
+                <div class="games-container">
+                    <div class="header-title">
+                        <div class="headers"><span>Games</span></div>
+                    </div>
+                    <div class="filter-container">
+                        <span>Filter by:</span>
+                    </div>
+                    <div class="product-container">
+                        {{#each games}}
+                            <div class="product">
+                                <a href="/game/vg/{{_id}}"><img src="{{link}}" class="product-image"></a>
+                                <div class="details">
+                                    <div class="product-title">{{title}}</div>
+                                    <div class="release-date">Released {{release}}</div>
+                                    <a href="/post/available"><div class="rent-button">RENT</div></a>
+                                </div>
+                            </div>            
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
