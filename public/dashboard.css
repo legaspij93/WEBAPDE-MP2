@@ -32,7 +32,7 @@
 
 
 .dashboard-container{
-    background-color:#fff;
+    background-color:#464646;
     height: 100%;
     width: 100%;
     margin: 0px;
@@ -45,113 +45,7 @@
 */
 }
 
-#nav-bar{
-    height: 5em;
-    background-color: #737373;
-    overflow: hidden;
-    padding: 0 20px;
-    color: white;
-    position: relative;
-    z-index: 99;
-}
 
-.logo{
-    height: 2.5em;
-    margin-top: 1%;
-    float: left;
-    padding-right: 2.1875em;
-}
-
-.nav{
-    line-height: 5em;
-}
-
-.nav a{
-    font-family: ralewaysemibold;
-    text-decoration: none;
-    color: white;
-    font-size: 24px;
-    padding: 0 10px;
-    transition: 0.4s;
-}
-
-.search-container{
-    position: absolute;
-    transform: translate(-50%, -35%);
-    background: #2f3640;
-    height: 1.875em;
-    border-radius: 30px;
-    margin-top: 0.625em;
-    padding: 0.625em;
-    top: 1.3em;
-    left: 83%;
-}
-
-.search-btn{
-    color: #fd8f4b;
-    float: right;
-    width: 10px;
-    height: 30px;
-    border-radius: 50%;
-    background: #2f3640;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.4s;
-}
-
-
-.search-box{
-    border: none;
-    background: none;
-    outline: none;
-    float: left;
-    padding: 0;
-    color: white;
-    font-size: 16px;
-    transition: 0.4s;
-    line-height: 30px;
-    width: 9.375em;
-}
-
-
-.cart{
-    height: 1.2em;
-    width: 1.2em;
-    position: absolute;
-    margin-top: 0.3em;
-    padding: 0.3em;
-    top: 0.3125em;
-    left: 90%;
-}
-
-.profile{
-    position: absolute;
-    top: -0.2em;
-    right: 1%;
-}
-
-.nav-right{
-    float: right;
-    line-height: 80px;
-}
-
-
-.nav a:hover{
-    color: #fd8f4b;
-}
-
-/*FOR NAVBAR*/
-.sticky{
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-.sticky + .content-container{
-    padding-top: 80px;
-}
-/*END OF NAVBAR*/
 
 .image-slider{
     position: relative;
@@ -392,9 +286,10 @@
     display: flex;
     flex-direction: row;
     margin-top: 15px;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    max-height: 350px;
     flex-grow: 1;
 
 }
@@ -416,11 +311,12 @@
 }
 
 .release-date{
+    color: #FFF;
     font-size: 12px;
 }
 
 .product-title{
-    color: #f66d18;
+    color: #FFF;
     font-size: 14px;
     margin-bottom: 10px;
 }
@@ -443,7 +339,7 @@
 
 .headers{
     font-size: 24px;
-
+    color: #FFF;
 }
 
 .see-all{
@@ -470,8 +366,8 @@
 }
 
 .rent-button{
-    height: 30px;
-    width: 150px;
+    height: 20px;
+    width: 75px;
     background-color:#fd8f4b;
     padding: 5px;
     color: white;
@@ -479,7 +375,7 @@
     text-align: center;
     align-content: center;
     display: inline-block;
-    line-height: 30px;
+    line-height: 20px;
     margin-top: 5px;
     border-style: none;
     border-radius: 3px;
@@ -492,8 +388,31 @@
 
 
 .product{
-    width: 200px;
+    max-width: 200px;
+    min-width: 200px;
+    max-height: 315px;
+    min-height: 315px;
     display: block;
     margin: 5px;
+    background-color: #373737;
+    align-self: left;
 }
 
+/*SCROLLBARS*/
+*{
+  scrollbar-width: thin;
+  scrollbar-color: #373737 #464646;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: #464646;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #373737;
+  border-radius: 0;
+  border: 3px solid #464646;
+}
