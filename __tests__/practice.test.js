@@ -1,3 +1,7 @@
+// NOTE: Automock is also turned on. So please import then all the functions from the module to be tested. 
+// Format and Sample, respectively, below:
+// import * as <name of app> from "<path to js file tested>"
+// import * as cart from "../models/cart";
 describe('This is a Unit Test Group', () => {
    describe('This is a Unit Test Subgroup', () => {
         test('This is the test function #1', () => {
@@ -20,3 +24,13 @@ describe('This is another Unit Test Group', () => {
         })
     })
 });
+
+describe('This is an outline for a Unit Test for a function', () => {
+    describe('This is a subgroup in the Function Unit Test', () => {
+        test('This is a REAL mock function test', () => {
+            // Following the cart example above, here's how a mock function unit test would look like
+            // cart.add(value1, value2)
+            // expect(card.add).toHaveBeenCalledWith(1, 2);
+        })
+    })
+})
