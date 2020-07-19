@@ -4,5 +4,6 @@ module.exports = {
         'src/**/*.{js,jsx}',
         '!src/**/node_modules/**',
     ],
-    automock: true
+    automock: false,
+    "preset": "@shelf/jest-mongodb"
 };
