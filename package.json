@@ -23,9 +23,10 @@
     "express-session": "^1.17.1",
     "hbs": "^4.1.1",
     "moment": "^2.27.0",
-    "mongoose": "^5.9.24"
+    "mongoose": "^5.9.25"
   },
   "devDependencies": {
+    "@shelf/jest-mongodb": "^1.2.1",
     "jest": "^26.1.0"
   }
 }
