@@ -20,7 +20,6 @@ router.post("/add-game", function(req, res){
         genre : req.body.genre,
         release : req.body.release,
         rating : req.body.rating,
-        description : req.body.description,
         link : req.body.link,
         clicks: 0 
     }
