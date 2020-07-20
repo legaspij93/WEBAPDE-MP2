@@ -127,6 +127,15 @@
     align-self: left;
 }
 
+.select-menu{
+    margin: 2px;
+    background-color: #373737;
+    color: #FFF;
+}
+
+.noresult{
+    color: #FFF;
+}
 /*SCROLLBARS*/
 *{
   scrollbar-width: thin;
