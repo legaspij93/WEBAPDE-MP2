@@ -5,5 +5,5 @@ module.exports = {
         '!src/**/node_modules/**',
     ],
     automock: false,
-    "preset": "@shelf/jest-mongodb"
+    // "preset": "@shelf/jest-mongodb"
 };
