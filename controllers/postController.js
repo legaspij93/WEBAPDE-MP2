@@ -1,6 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const Post = require("../models/post")
+const User = require("../models/user")
 const bodyparser = require("body-parser")
 
 const app = express()
@@ -12,16 +13,16 @@ const urlencoder = bodyparser.urlencoded({
 router.use(urlencoder)
 
 router.post("/new-post", function(req, res){
-    var username = req.session.username
+    var user = User.getUser(req.session.username)
     var status = "Available"
-    console.log(username)
+    console.log(user.username)
 
     var post = {
         title : req.body.title,
-        user : username,
+        user : user.firstName + " " + user.lastName,
         price : req.body.price,
         status : status,
-        region : req.body.region,
+        region : user.region,
         description : req.body.description
     }
     
