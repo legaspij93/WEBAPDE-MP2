@@ -22,6 +22,29 @@
                     </div>
                     <div class="filter-container">
                         <span>Filter by:</span>
+                        <div class="select-container">
+                            <select class="select-menu" id="select-console">
+                                <option value="all">All Consoles</option>
+                                <option value="switch">Nintendo Switch</option>
+                                <option value="xbox">Xbox One</option>
+                                <option value="ps4">PS4</option>
+                            </select>
+                        </div>
+                        <div class="select-container">
+                            <select class="select-menu" id="select-genre">
+                                <option value="all">All Genres</option>
+                                <option>Action/Adventure</option>
+                                <option>Arcade/Puzzle</option>
+                                <option>Family/Party</option>
+                                <option>Fighting</option>
+                                <option>Music/Dance</option>
+                                <option>Racing</option>
+                                <option>RPG</option>
+                                <option>Shooter</option>
+                                <option>Sports</option>
+                                <option>Strategy</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="product-container">
                         {{#each games}}
@@ -37,6 +60,30 @@
                     </div>
                 </div>
             </div>
+            
+            <script>
+                $(".select-menu").on('change', function(){
+                    var selectedConsole = $("#select-console").val();
+                    var selectedGenre = $("#select-genre").val();
+                    $(".product").remove();
+                    $(".noresult").remove();
+                    {{#each games}}
+                        if((selectedConsole === "all" || selectedConsole === "{{platform}}") && (selectedGenre === "all" || selectedGenre === "{{genre}}")){
+                           $(".product-container").append('<div class="product">' +
+                                                                '<a href="/game/vg/{{_id}}"><img src="{{link}}" class="product-image"></a>' +
+                                                                '<div class="details">' +
+                                                                    '<div class="product-title">{{title}}</div>' +
+                                                                    '<div class="release-date">Released{{release}}</div>' +
+                                                                    '<a href="/post/available"><div class="rent-button">RENT</div></a>' +
+                                                                '</div>' +
+                                                            '</div>').hide().show('fast');
+                        }
+                    {{/each}}
+                    if(!$(".product").length){
+                        $(".product-container").append('<div class = "noresult"> No results available. </div>').hide().show('fast');
+                    }
+                });
+            </script>
         </div>
     </body>
 </html>
