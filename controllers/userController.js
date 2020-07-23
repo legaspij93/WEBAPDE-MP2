@@ -1,6 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const User = require("../models/user")
+const Post = require("../models/post")
 const bodyparser = require("body-parser")
 
 const app = express()
@@ -50,10 +51,13 @@ router.get("/loginpage", function(req,res){
 router.get("/profile", function(req,res){
     currUser = req.session.username
     User.getUser(currUser).then((newUser)=>{
-        console.log(newUser)
-        res.render("profile.hbs", {
-            newUser
+//        console.log(newUser)
+        Post.getAll().then((games)=>{
+            res.render("profile.hbs", {
+                newUser, games
+            })
         })
+        
     })
 })
 
