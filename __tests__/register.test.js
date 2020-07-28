@@ -1,3 +1,29 @@
+function validation(user, confirmPass){
+    if(user.firstName && user.lastName && user.region && user.email && user.password == confirmPass){
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(user.email)){
+            return true
+        }
+        else{
+            return false
+        }
+    }
+    else{
+        return false
+    }
+}
+
+describe('Register Test', () =>{
+    describe('Form Validation', ()=>{
+        test('All forms are filled properly', ()=>{
+            const userData = {firstName : "Steven", lastName : "Adams", region: "America", password: "secret", email: "steven@mail.com"}
+            const confirm = "secret"
+
+            expect(validation(userData, confirm)).toBe(true)
+        })
+    })
+})
+
+
 // const mongoose = require('mongoose')
 // const user = require('../models/user')
 // const userData = {firstName : "Steven", lastName : "Adams", region: "America", password: "secret", email: "stevenA@mail.com"}

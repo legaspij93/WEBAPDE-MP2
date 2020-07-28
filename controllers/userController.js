@@ -11,6 +11,20 @@ const urlencoder = bodyparser.urlencoded({
 
 router.use(urlencoder)
 
+function validation(user, confirmPass){
+    if(user.firstName && user.lastName && user.region && user.email && user.password == confirmPass){
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(user.email)){
+            return true
+        }
+        else{
+            return false
+        }
+    }
+    else{
+        return false
+    }
+}
+
 router.post("/register", function(req, res){
     var user = {
         firstName : req.body.firstName,
@@ -19,13 +33,21 @@ router.post("/register", function(req, res){
         email: req.body.email,
         password : req.body.password
     }
-    User.create(user).then((user)=>{
-        console.log(user)
-        req.session.username = user.username
-        res.render("loginscreen.hbs")
-    }, (error)=>{
-        res.sendFile(error)
-    })
+    var confirmPass = req.body.confirmPass
+
+    if(validation(user, confirmPass)){
+        User.create(user).then((user)=>{
+            console.log(user)
+            req.session.username = user.username
+            res.render("loginscreen.hbs")
+        }, (error)=>{
+            res.sendFile(error)
+        })
+    }
+    else{
+        //insert error message here
+        res.redirect("signup.hbs")
+    }
 })
 
 router.post("/login", function(req, res){
