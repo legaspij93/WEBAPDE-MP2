@@ -32,6 +32,20 @@ function regValidation(user, confirmPass){
     }
 }
 
+function validation(user){
+    if(user.email && user.password){
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(user.email)){
+            return true
+        }
+        else{
+            return false
+        }
+    }
+    else{
+        return false
+    }
+}
+
 router.post("/register", function(req, res){
     var user = {
         firstName : req.body.firstName,
@@ -53,7 +67,7 @@ router.post("/register", function(req, res){
     }
     else{
         //insert error message here
-        res.redirect("signup.hbs")
+        res.redirect("/")
     }
 })
 
@@ -76,7 +90,7 @@ router.post("/login", function(req, res){
     }
     else{
         //insert error message here
-        res.redirect("/loginpage")
+        res.redirect("/user/loginpage")
     }
 })
 
