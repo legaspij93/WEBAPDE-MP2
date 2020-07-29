@@ -11,10 +11,15 @@ const urlencoder = bodyparser.urlencoded({
 
 router.use(urlencoder)
 
-function validation(user, confirmPass){
+function regValidation(user, confirmPass){
     if(user.firstName && user.lastName && user.region && user.email && user.password == confirmPass){
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(user.email)){
-            return true
+            if(!/[^a-zA-Z0-9]/.test(user.firstName) && !/[^a-zA-Z0-9]/.test(user.lastName)){
+                return true
+            }
+            else{
+                return false
+            }
         }
         else{
             return false
@@ -35,7 +40,7 @@ router.post("/register", function(req, res){
     }
     var confirmPass = req.body.confirmPass
 
-    if(validation(user, confirmPass)){
+    if(regValidation(user, confirmPass)){
         User.create(user).then((user)=>{
             console.log(user)
             req.session.username = user.username
