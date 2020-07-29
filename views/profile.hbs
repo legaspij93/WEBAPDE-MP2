@@ -9,105 +9,70 @@
     
     <body>
         <div class="dashboard-container">
-            <div id="nav-bar">
-<!-----------------------NAVBAR JS----------------------------------->
-                <script>
-                    window.onscroll = function(){
-                        stickyBar()
-                    };
-
-                    var navbar = document.getElementById("nav-bar");
-                    var sticky = navbar.offsetTop;
-
-                    function stickyBar(){
-                        if(window.pageYOffset > sticky){
-                            navbar.classList.add("sticky")
-                        }else{
-                            navbar.classList.remove("sticky")
-                        }
-                    }
-                </script>
-<!-------------------------------------------------------------------->
-                <img src="/image/LOGO2.png" class="logo">
-                
-                <ul class="nav">
-                    <a href="/game/games" name="games">Games</a>
-                    <a href="/post/upload" name="upload">Upload</a>
-                    
-                    <div class="nav-right">
-                        <div class="search-container">
-                            <input class="search-box" type="text" name="search" placeholder=" Search..." >
-                            <a class="search-btn" href="#">
-                                <i class="fas fa-search"></i>
-                            </a>
-                        </div>
-                        <a href="/cart"><i class="fas fa-shopping-cart cart"></i></a>
-                        <a href="/user/profile" class="profile" name="profile">Profile</a>
-                    </div>
-                </ul>
-   
-            </div>
             
+            <div id="nav"></div>
+            <script>
+                $.get("/nav.html", function(data){
+                    $("#nav").replaceWith(data).stop();
+                });
+            </script>
             <div class="content-container">
-                
-                <div class="header">
-                    <img src="/image/temp.jpg">
-                </div>
-                
                 <div class="content">
-                    
                     <div class="user-details">
-                        <div class="image-wrapper">
-                            <img src="/image/usericon.png">
-                        </div>
-
                         <div class="user">
                             <div class="username">{{newUser.username}}</div>
                             <div class="location-container">
-                                <div class="location-label">Location</div>
-                                <div class="location">Binondo, Manila</div>
+                                <div class="location-label">Region:</div>
+                                <div class="location">{{newUser.region}}</div>
                             </div>
                             <div class="email-container">
-                                <div class="email-label">Contact Me</div>
+                                <div class="email-label">Email:</div>
                                 <div class="email">{{newUser.email}}</div>
                             </div>
                         </div>
-                        
-                        <a href="/user/loginpage">
-                                <div class="logout-container">
-                                    <img src="/image/logout.png" class="logout">
-                                </div>
-                            </a>
                     </div>
-                    
-                    
-                    <div class="listing-container">
-                        
+                    <div class="listing-container"> 
                         <div class="listing-label">Listings</div>
-                        
-                        
-                        <div class="product" id="2">
-                            <a href="/rental2" class="product">
-                                <img src="/image/Spiderman/ps4.jpg" class="available-image">
-                                <div class="available-details">
-                                    <div class="product-title">Marvel's Spider-Man</div>
-                                    <div class="price">₱700</div>
-<!--
-                                    <div class="rent-button">
-                                        RENT
-                                    </div>
--->
-                                </div>
-                            </a>
-                        </div>
-                    
+                        <div class="listing-items"></div>
                     </div>
-                    
                 </div>
-                
-                
-                
             </div>
+            
+            <script>
+                $(document).ready(function(){
+                    var selectedConsole = $("#select-console").val();
+                    var selectedGenre = $("#select-genre").val();
+                    $(".product").remove();
+                    $(".noresult").remove();
+                    var userstr = '{{newUser.username}}'
+                    {{#each posts}}
+                        var titlestr = '{{title}}';
+                        var postimgid = 'id_' + titlestr.replace(/ /g, '');
+                        if(userstr === '{{user}}'){
+                           $(".listing-items").append('<div class="product">' +
+                                                                '<div id = "' + postimgid + '"></div>' +
+                                                                '<div class="details">' +
+                                                                    '<div class="product-title">{{title}}</div>' +
+                                                                    '<div class="release-date">P{{price}}</div>' +
+                                                                    '<a href=""><div class="rent-button">EDIT</div></a>' +
+                                                                '</div>' +
+                                                            '</div>').hide().show('fast');
+                        }
+                    {{/each}}
+                    if(!$(".product").length){
+                        $(".listing-items").append('<div class = "noresult"> No listings available. </div>').hide().show('fast');
+                    }
+                    else{
+                        {{#each games}}
+                            var titlestr = '{{title}}';
+                            var gameimgid = '#id_' + titlestr.replace(/ /g, '');
+                            $(gameimgid).append('<a href="/game/vg/{{_id}}"><img src="{{link}}" class="product-image"></a>');
+                        {{/each}}
+                    }
+                    
+                });
+            </script>
+            
         </div>
     </body>
 </html>

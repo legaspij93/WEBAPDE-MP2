@@ -34,3 +34,13 @@ exports.get = function(id){
         })
     })
 }
+
+exports.getAll = function(){
+    return new Promise(function(resolve, reject){
+        Post.find().then((post)=>{
+            resolve(post)
+        }, (err)=>{
+            reject(err)
+        })
+    })
+}
