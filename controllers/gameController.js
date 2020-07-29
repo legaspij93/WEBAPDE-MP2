@@ -12,6 +12,15 @@ const urlencoder = bodyparser.urlencoded({
 
 router.use(urlencoder)
 
+function validation(game){
+    if(game.title && game.platform && game.genre && game.release && game.rating && game.link){
+        return true
+    }
+    else{
+        return false
+    }
+}
+
 router.post("/add-game", function(req, res){
     
     var game = {
@@ -20,17 +29,22 @@ router.post("/add-game", function(req, res){
         genre : req.body.genre,
         release : req.body.release,
         rating : req.body.rating,
-        description : req.body.description,
         link : req.body.link,
         clicks: 0 
     }
-
-    Game.create(game).then((game)=>{
-        console.log(game)
-        res.render("upload.hbs")
-    }, (error)=>{
-        res.sendFile(error)
-    })
+    
+    if(validation(game)){
+        Game.create(game).then((game)=>{
+            console.log(game)
+            res.render("upload.hbs")
+        }, (error)=>{
+            res.sendFile(error)
+        })
+    }
+    else{
+        //insert error message here
+        res.redirect("/game/new-game")
+    }
 })
 
 router.get("/games", function(req,res){
