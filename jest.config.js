@@ -1,9 +1,9 @@
 module.exports = {
+    // preset: '@shelf/jest-mongodb',
     collectCoverage: true,
     collectCoverageFrom: [
         'src/**/*.{js,jsx}',
         '!src/**/node_modules/**',
     ],
-    automock: false,
-    // "preset": "@shelf/jest-mongodb"
+    automock: true,
 };

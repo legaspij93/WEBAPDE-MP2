@@ -11,10 +11,15 @@ const urlencoder = bodyparser.urlencoded({
 
 router.use(urlencoder)
 
-function validation(user){
-    if(user.email && user.password){
+function regValidation(user, confirmPass){
+    if(user.firstName && user.lastName && user.region && user.email && user.password == confirmPass){
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(user.email)){
-            return true
+            if(!/[^a-zA-Z0-9]/.test(user.firstName) && !/[^a-zA-Z0-9]/.test(user.lastName)){
+                return true
+            }
+            else{
+                return false
+            }
         }
         else{
             return false
@@ -27,16 +32,27 @@ function validation(user){
 
 router.post("/register", function(req, res){
     var user = {
-        username : req.body.username,
+        firstName : req.body.firstName,
+        lastName: req.body.lastName,
+        region: req.body.region,
+        email: req.body.email,
         password : req.body.password
     }
-    User.create(user).then((user)=>{
-        console.log(user)
-        req.session.username = user.username
-        res.render("loginscreen.hbs")
-    }, (error)=>{
-        res.sendFile(error)
-    })
+    var confirmPass = req.body.confirmPass
+
+    if(regValidation(user, confirmPass)){
+        User.create(user).then((user)=>{
+            console.log(user)
+            req.session.username = user.username
+            res.render("loginscreen.hbs")
+        }, (error)=>{
+            res.sendFile(error)
+        })
+    }
+    else{
+        //insert error message here
+        res.redirect("signup.hbs")
+    }
 })
 
 router.post("/login", function(req, res){

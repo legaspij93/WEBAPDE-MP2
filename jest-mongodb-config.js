@@ -1,12 +1,12 @@
 // module.exports = {
 //     mongodbMemoryServerOptions: {
 //         instance: {
-//             dbName: 'gameshare'
+//             dbName: 'jest'
 //         },
 //         binary: {
-//             version: '4.2.0',
+//             version: '4.2',
 //             skipMD5: true
 //         },
 //         autoStart: false
 //     }
-// }
+// };
