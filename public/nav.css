@@ -1,0 +1,56 @@
+#nav-bar{
+    height: 5em;
+    background-color: #373737;
+    overflow: hidden;
+    padding: 0 20px;
+    color: white;
+    position: relative;
+    z-index: 99;
+}
+
+.logocontainer{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 2.5em;
+    float: left;
+    padding-right: 2.1875em;
+}
+
+.menucontainer{
+    float: right;
+    line-height: 80px;
+    padding-top: 10px;
+}
+
+.logo{
+    height: 2.5em;
+}
+
+.nav{
+    line-height: 5em;
+    
+}
+
+.nav a{
+    font-family: ralewayregular;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    padding: 0 10px;
+    transition: 0.4s;
+}
+
+.nav a:hover{
+    color: #fd8f4b;
+}
+
+.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky + .content-container{
+    padding-top: 80px;
+}
