@@ -32,15 +32,15 @@
 
 
 .dashboard-container{
-    background-color:#fff;
+    background-color:#464646;
     height: 100%;
 /*    width: 100%;*/
     margin: 0px;
     max-width: 100%;
     position: relative;
     overflow-x: hidden;
-    display: flex;
     flex-direction: column;
+    
 }
 
 .content-container{
@@ -165,15 +165,18 @@
 
 .details-container{
     height: 17em;
-    width: 100%;
+    width: 80%;
 /*    background-color: black;*/
-    background-color: rgba(0, 0, 0, 0.8);
+    background: #373737;
     position: absolute;
     z-index: 2;
     border-style: none;
     padding: 15px;
     padding-left: 20px;
-    margin-top: 5px;
+    margin-left: 10%;
+    margin-top: 1%;
+
+    box-shadow: 2px 2px 2px #00000054;
     
 }
 
@@ -194,11 +197,11 @@
 
 .product-container{
     position: absolute;
-    height: 90%;
+    height: 75%;
     width: 100%;
-    top: 3em;
-    display: block;
-    left: 15%;
+    top: 0em;
+    display: flex;
+    left: 20%;
     
 }
 
@@ -218,17 +221,19 @@
     color: #d4d4d4;
     font-family: ralewayregular;
     font-size: 18px;
-    margin-top: 20px;
+    margin-top: 5px;
+    padding-left: 10px;
     
 }
 
 #release-label, #genre-label, .rating-label, .user-rating-label{
-    font-family: ralewaysemibold;
-    color: #737373;
+    font-family: ralewayregular;
+    color: white;
 }
 
 #release, #genre, #rating-label{
     font-family: ralewayregular;
+    color: white;
 }
 
 .rating-container{
@@ -255,7 +260,7 @@
     width: 18.75em;
     background-color:#fd8f4b;
     padding: 5px;
-    color: white;
+    color: black;
     font-family: ralewayregular;
     text-align: center;
     align-content: center;
@@ -265,7 +270,7 @@
     border-style: none;
     border-radius: 3px;
     position: absolute;
-    top: 45%;
+    top: 52%;
 /*    left: 10%;*/
 }
 
@@ -354,7 +359,7 @@
     text-align: center;
 }
 
-.rent-button{
+.rent_days{
     height: 30px;
     width: 150px;
     background-color:#fd8f4b;
@@ -363,14 +368,30 @@
     font-family: ralewayregular;
     text-align: center;
     align-content: center;
+    line-height: 30px;
+    margin-top: 5px;
+    border-style: none;
+}
+
+.rent_button{
+    height: 30px;
+    width: 150px;
+    background-color:#fd8f4b;
+    padding: 5px;
+    color: black;
+    font-family: ralewayregular;
+    text-align: center;
+    align-content: center;
     display: inline-block;
     line-height: 30px;
     margin-top: 5px;
     border-style: none;
-    border-radius: 3px;
+    font-weight: bold;
+    padding-bottom: 15%;
+    font-size: medium;
 }
 
-.rent-button:hover{
+.rent_button:hover{
     background-color: #f66d18;
     cursor: pointer;
 }
@@ -378,3 +399,61 @@
 #1{
     float: left;
 }
+
+#game_title{
+    margin-left: 10%;
+    margin-top: 3%;
+}
+
+.left_info{
+    width: 45%;
+    padding-top: 14px;
+}
+
+.right_info{
+    padding-left: 5%;
+    margin-top: 14px;
+}
+
+.important_info{
+    font-weight: bold;
+    font-size: x-large;
+    margin-bottom: 10%;
+}
+.details_lower{
+    margin-top: 2%;
+    background-color: #464646;
+    height: 45%;
+    width: 94%;
+    padding-top: 3px ;
+    margin-left: 1%;
+}
+.input_number{
+    width: 20%;
+    height: 100%;
+    font-family: ralewayregular;
+    border: none;
+    background-color: #fd8f4b;
+    color: black;
+    text-align: center;
+    font-size: 100%;
+    font-weight: bold;
+    font-size: large
+}
+
+.input_number:focus{
+    outline: none;
+    font-size: large;
+}
+
+.days_divide{
+    display: flex;
+}
+
+.days_display{
+    color: white;
+    font-family: ralewayregular;
+    font-size: large;
+}
+
+
