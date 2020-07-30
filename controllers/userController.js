@@ -99,7 +99,7 @@ router.get("/loginpage", function(req,res){
 })
 
 router.get("/profile", function(req,res){
-    currUser = req.session.username
+    currUser = req.session.email
     User.getUser(currUser).then((newUser)=>{
 //        console.log(newUser)
         Post.getAll().then((posts)=>{

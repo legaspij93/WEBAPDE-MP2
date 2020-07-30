@@ -2,6 +2,7 @@ const express = require("express")
 const router = express.Router()
 const Post = require("../models/post")
 const User = require("../models/user")
+const Game = require("../models/game")
 const bodyparser = require("body-parser")
 
 const app = express()
@@ -27,33 +28,32 @@ function listingValidation(listing){
 }
 
 router.post("/new-post", function(req, res){
-    var user = User.getUser(req.session.username)
-    var status = "Available"
-    console.log(user.username)
+    User.getUser(req.session.email).then((user)=>{
+        var status = "Available"
+        console.log(user.email)
 
-    var post = {
-        title : req.body.title,
-        user : user.firstName + " " + user.lastName,
-        price : req.body.price,
-        status : status,
-        region : user.region,
-        description : req.body.description
-    }
-    
-    if(listingValidation(post)){
-        Post.create(post).then((post)=>{
-            console.log(post)
+        var post = {
+            title : req.body.title,
+            user : user.email,
+            price : req.body.price,
+            status : status,
+            region : user.region,
+            description : req.body.description
+        }
+        
+         if(listingValidation(post)){
+            Post.create(post).then((post)=>{
+                res.redirect("upload")
+            }, (error)=>{
+                res.sendFile(error)
+            })
+        }
+        else{
+            //insert error message
+            console.log("error")
             res.redirect("upload")
-        }, (error)=>{
-            res.sendFile(error)
-        })
-    }
-    else{
-        //insert error message
-        console.log("error")
-        res.redirect("upload")
-    }
-    
+        }
+    })
 })
 
 router.get("/available", function(req, res){
@@ -61,8 +61,13 @@ router.get("/available", function(req, res){
 })
 
 router.get("/upload", function(req, res){
-    console.log(req.session.username)
-    res.render("upload.hbs")
+    Game.getAll().then((games)=>{
+        User.getUser(req.session.email).then((user)=>{
+            res.render("upload.hbs", {
+                games, user
+            })
+        })
+    })
 })
 
 module.exports = router

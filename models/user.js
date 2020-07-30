@@ -55,9 +55,9 @@ exports.get = function(id){
   })
 }
 
-exports.getUser = function(username){
+exports.getUser = function(email){
     return new Promise(function(resolve, reject){
-      User.findOne({username:username}).then((user)=>{
+      User.findOne({email:email}).then((user)=>{
         resolve(user)
       }, (err)=>{
         reject(err)
