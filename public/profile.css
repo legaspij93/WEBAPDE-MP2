@@ -115,10 +115,9 @@
 
 .listing-label
 {
-    margin-top: 55px;
-    margin-left: 20px;
     font-size: 24px;
     font-family: ralewaysemibold;
+    float: left;
 }
 
 .product{
@@ -170,6 +169,32 @@
 }
 
 .rent-button:hover{
+    background-color: #f66d18;
+    cursor: pointer;
+}
+
+.listing-header{
+    margin-top: 55px;
+    margin-left: 20px;
+    margin-right: 20px;
+    overflow: hidden;
+}
+
+.listing-button{
+    height: 30px;
+    width: 300px;
+    background-color:#fd8f4b;
+    padding: 5px;
+    color: white;
+    font-family: ralewayregular;
+    text-align: center;
+    line-height: 30px;
+    border-style: none;
+    border-radius: 3px;
+    float: right;
+}
+
+.listing-button:hover{
     background-color: #f66d18;
     cursor: pointer;
 }

@@ -20,7 +20,7 @@
                 <div class="content">
                     <div class="user-details">
                         <div class="user">
-                            <div class="username">{{newUser.username}}</div>
+                            <div class="username">{{newUser.firstName}} {{newUser.lastName}}</div>
                             <div class="location-container">
                                 <div class="location-label">Region:</div>
                                 <div class="location">{{newUser.region}}</div>
@@ -32,7 +32,10 @@
                         </div>
                     </div>
                     <div class="listing-container"> 
-                        <div class="listing-label">Listings</div>
+                        <ul class="listing-header">
+                            <div class="listing-label">Listings</div>
+                            <a href="/post/upload"><div class="listing-button">ADD LISTING</div></a>
+                        </ul>
                         <div class="listing-items"></div>
                     </div>
                 </div>
@@ -44,7 +47,7 @@
                     var selectedGenre = $("#select-genre").val();
                     $(".product").remove();
                     $(".noresult").remove();
-                    var userstr = '{{newUser.username}}'
+                    var userstr = '{{newUser.email}}'
                     {{#each posts}}
                         var titlestr = '{{title}}';
                         var postimgid = 'id_' + titlestr.replace(/ /g, '');

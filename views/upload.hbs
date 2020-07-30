@@ -1,105 +1,70 @@
 <html>
     <head>
-        <link rel="stylesheet" href="/post.css">
+        <link rel="stylesheet" href="/upload.css">
         <script src="/jQuery.js"></script>
-        
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     </head>
     
     <body>
-        <div class="checkout-container">
-            <div id="nav-bar">
-<!-----------------------NAVBAR JS----------------------------------->
-                <script>
-                    window.onscroll = function(){
-                        stickyBar()
-                    };
-
-                    var navbar = document.getElementById("nav-bar");
-                    var sticky = navbar.offsetTop;
-
-                    function stickyBar(){
-                        if(window.pageYOffset > sticky){
-                            navbar.classList.add("sticky")
-                        }else{
-                            navbar.classList.remove("sticky")
-                        }
-                    }
-                </script>
-<!-------------------------------------------------------------------->
-                <img src="/image/LOGO2.png" class="logo">
-                
-                <ul class="nav">
-                    <a href="/game/games" name="games">Games</a>
-                    <a href="upload" name="upload">Upload</a>
-                    
-                    <div class="nav-right">
-                        <a href="/cart"><i class="fas fa-shopping-cart cart"></i></a>
-                        
-                        <div class="search-container">
-                            <input class="search-box" type="text" name="search" placeholder=" Search..." >
-                            <a class="search-btn" href="#">
-                                <i class="fas fa-search"></i>
-                            </a>
-                        </div>
-                        
-                        <a href="/user/profile" class="Profile" name="Profile">Profile</a>
-                    </div>
-                </ul>
-            </div>
+        <div class="checkout-container"> 
             
-            <div class="bg-container">
-                <img src="/image/bg2.jpg" id="bg-img">
-            </div>  
+            <div id="nav"></div>
+                 <script>
+                    $.get("/nav.html", function(data){
+                        $("#nav").replaceWith(data).stop();
+                    });
+                </script>
             
             <div class="main-body">
-                <div class="main-body-bg"></div>
-                
                 <div class="checkout-header">
-                    <span class="checkout-header-label">Post Details</span>
+                    <span class="checkout-header-label">Add a Listing</span>
                 </div>
-                
-                    <div class="title-label">Title</div>
-                    <div class="region-label">Region</div>
-                    <div class="price-label">Price</div>
-                    <div class="description-label">Description</div>
-                    <div class="link-label">Link to Photo:</div>
-                    <div class="new-game">Is your game not on our database? 
-                        <a class="new-game-link" href="/game/new-game">Click here to add it now!</a>
-                    </div>
-                    <div class="php">₱</div>
-                
                         <form action="new-post" method="post">
-                            <div class="title-input">
-                                <input class="title" type="text" name="title">
+                            <div class="left-column">
+                                <div class="input-section">
+                                    <select class="dropdown-field" name="title">
+                                            <option disabled selected value>Game</option>
+                                        {{#each games}}
+                                            <option>{{title}}</option>
+                                        {{/each}}
+                                    </select>
+                                    
+                                    <div class="item-sub">Is your game not on our database? 
+                                        <a class="item-sub-link" href="/game/new-game">Click here to add it now!</a>
+                                    </div>
+                                </div>
+
+                                <div class="input-section">
+                                        <div class="item-label">Price</div>
+                                        <span class="item-label">Php </span>
+                                        <input class="price-field" type="number" name="price">
+                                        <span class="item-label"> /day</span>
+                                </div>
+                                
+                                <div class="input-section">
+                                    <div class="item-label">Condition</div>
+                                    <textarea class="description-field" name="description"></textarea>
+                                </div>
                             </div>
                             
-                            <div class="region-input">
-                                <select class="region" name="region">
-                                    <option disabled selected value>Select Region</option>
-                                    <option>NSTC-J (Japan and Asia)</option>
-                                    <option>NSTC-U (North and South America)</option>
-                                    <option>PAL (Europe, New Zealand and Australia)</option>
-                                    <option>NSTC-C (China)</option>
-                                </select>
-                            </div>
-
-                            <div class="price-input">
-                                <input class="price" type="number" name="price">
+                            <div class="right-column">
+                                <div class="input-section">
+                                    <div class="item-label">Status</div>
+                                    <div class="item-display">Available</div>
+                                </div>
+                                
+                                <div class="input-section">
+                                    <div class="item-label">Region</div>
+                                    <div class="item-display">{{user.region}}</div>
+                                </div>
+                                
+                                <div class="input-section">
+                                    <div class="item-label">Owner</div>
+                                    <div class="item-display">{{user.firstName}} {{user.lastName}}</div>
+                                </div>
+                                
                             </div>
                             
-                            <div class="description-input">
-                                <input class="description" type="text" name="description">
-                            </div>
-
-                            <div class="link-input">
-                                <input class="link" type="text" name="link">
-                            </div>
-
-                            {{!-- <div class="period-input">
-                                <input class="period" type="text" name="period">
-                            </div> --}}
-
                             <div class="checkout-button-container">
                                 <input type="submit" value="Upload" class="upload">
                             </div>
