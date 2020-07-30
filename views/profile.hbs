@@ -68,8 +68,8 @@
                     else{
                         {{#each games}}
                             var titlestr = '{{title}}';
-                            var gameimgid = '#id_' + titlestr.replace(/ /g, '');
-                            $(gameimgid).append('<a href="/game/vg/{{_id}}"><img src="{{link}}" class="product-image"></a>');
+                            var gameimgid = 'id_' + titlestr.replace(/ /g, '');
+                            $('[id="'+ gameimgid +'"]').append('<a href="/game/vg/{{_id}}"><img src="{{link}}" class="product-image"></a>');
                         {{/each}}
                     }
                     

@@ -222,7 +222,11 @@
 
 .listing-items{
     margin: 30px;
-    display: block; 
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    flex-grow: 1;
 }
 
 /*SCROLLBARS*/
