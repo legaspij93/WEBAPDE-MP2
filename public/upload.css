@@ -1,0 +1,159 @@
+/*--------------------FONTS USED--------------------*/
+@font-face {
+    font-family: ralewayregular;
+    src: url(fonts/ralewayregular.ttf);
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: ralewaysemibold;
+    src: url(fonts/ralewaysemibold.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: lemonmilk;
+    src: url(fonts/lemonmilk.otf);
+    font-weight: normal;
+    font-style: normal;
+
+}
+/*----------------------------------------------------*/
+*{
+    list-style: none;
+    font-family: ralewaysemibold;
+    margin: 0;
+    padding: 0;
+}
+
+.main-body{
+    width: 800px;
+    height: fill;
+    margin-left: 50px;
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #373737;
+    text-align: center;
+}
+
+.checkout-header-label{
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 15px;
+    margin-right: 500px;
+}
+
+.checkout-container{
+    background-image: url("image/bg2.jpg");
+    height: 100%;
+}
+
+.item-label{
+    color: #fff;
+    font-family: ralewayregular;
+}
+
+.item-sub{
+    color: #fff;
+    font-family: ralewayregular;
+    font-size: 15px;
+}
+
+.item-display{
+    color: #fff;
+    font-family: ralewaysemibold;
+    font-size: 25px;
+}
+
+.item-sub-link{
+    color: inherit;
+}
+
+.price-field{
+    width: 20%;
+    height: 30px;
+    background-color: #373737;
+    color: #fff;
+    border: none;
+    border-bottom: 2px solid #fff;
+    font-size: 20px;
+}
+
+.dropdown-field{
+    width: 100%;
+    height: 40px;
+    background-color: #464646;
+    color: #fff;
+    border: none;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.description-field{
+    width: 100%;
+    height: 70px;
+    background-color: #464646;
+    color: #fff;
+    border: none;
+    resize: none;
+}
+
+.input-section{
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.left-column{
+    float: left;
+    height: 250px;
+    width: 450px;
+    margin: 25px;
+}
+
+.right-column{
+    float: right;
+    height: 250px;
+    width: 250px;
+    margin: 25px;
+}
+
+.upload{
+    height: 2.5em;
+    width: 50%;
+    background-color: #fd8f4b;
+    opacity: 0.8;
+/*    background-image: -webkit-linear-gradient(right, #37AC99,#076FAD);*/
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    border-style: none;
+    font-family: ralewayregular;
+}
+
+.upload:hover{
+    background-color: #f66d18;
+    cursor: pointer;
+}
+
+/*SCROLLBARS*/
+*{
+  scrollbar-width: thin;
+  scrollbar-color: #373737 #464646;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: #464646;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #373737;
+  border-radius: 0;
+  border: 3px solid #464646;
+}
