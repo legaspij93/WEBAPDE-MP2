@@ -5,7 +5,6 @@
         <meta charset="UTF-8">
         
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-        
     </head>
     
     <body>
@@ -18,69 +17,79 @@
                 });
             </script>
             <!--START-->
-            <h1 id="game_title"> {{game.title}}</h1>
-            <div class="content-container">             
-                <div class="details-container">
-                    <div class="product-image-container">
-                        <img class="product-image" src="{{game.link}}">
-                    </div>
+            <h1 id="game_title"> {{game.title}}</h1>         
+            <div class="details-container">
+                <div class="product-image-container">
+                    <img class="product-image" src="{{game.link}}">
+                </div>
                         
-                    <div class="product-container">
-                        <div class="left_info">
-                            <div class="details">
-                                <span id="release-label"> Rating: </span>
-                                <span id="release">{{game.rating}}</span>
-                            </div>
-                            <div class="details">
-                                <span id="release-label"> Console: </span>
-                                <span id="release">{{game.rating}}</span>
-                            </div>
-                            <div class="details">
-                                <span id="release-label"> Genre: </span>
-                                <span id="release">{{game.genre}}</span>
-                            </div>
-                            <div class="details">
-                                <span id="release-label"> Owner: </span>
-                                <span id="release">Insert HBS</span>
-                            </div>
-                            <div class="details">
-                                <span id="release-label">Released</span>
-                                <span id="release">{{game.release}}</span>
-                            </div>
-                            <div class="details_lower">
-                                <div class="details">
-                                    <span id="release-label"> Region: </span>
-                                    <span id="release">{{game.rating}}</span>
-                                </div>
-                                <div class="details">
-                                    <span id="release-label"> Condition: </span>
-                                    <span id="release">{{game.description}}</span>
-                                </div>
-                            </div>
+                <div class="product-container">
+                    <div class="left_info">
+                        <div class="details">
+                            <span id="release-label"> Rating: </span>
+                            <span id="release">{{game.rating}}</span>
                         </div>
-                        <form class="right_info">
-                            <div id="release-label">Status:</div>
-                            <div class="important_info" id="release">Available</div>
-                            <div id="release-label">Price:</div>
-                            <div class="important_info" id="release">Php 200.00</div>
-                            <div class="days_divide">
-                                <input type="number" class="input_number" placeholder="3">  
-                                <p class="days_display"> Days</p>
-                            </div>
-                            <button class="rent_button">ADD TO CART</button>
-                            {{!-- <a href="/post/available">    
-                                <div class="rent_button">Available for Rent</div>
-                            </a> --}}
-                            
-                        </form>
+                        <div class="details">
+                            <span id="release-label"> Console: </span>
+                            <span id="release">{{game.rating}}</span>
+                        </div>
+                        <div class="details">
+                            <span id="release-label"> Genre: </span>
+                            <span id="release">{{game.genre}}</span>
+                        </div>
+                        <div class="details">
+                            <span id="release-label">Released</span>
+                            <span id="release">{{game.release}}</span>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
-                
-                
-            
-
-                
         </div>
+        
+        {{#each game}}
+        <div class="fix">
+            <h1 class="label_number"> {{@index }}</h1>
+            <div class="indiv_listing">
+                <div class="details_lower">
+                    <div class="details">
+                        <span id="release-label"> Owner: </span>
+                        <span id="release">Insert HBS</span>
+                    </div>
+                    <div class="details">
+                        <span id="release-label"> Region: </span>
+                        <span id="release">{{game.rating}}</span>
+                    </div>
+                    <div class="details">
+                        <span id="release-label"> Condition: </span>
+                        <span id="release">{{game.description}}</span>
+                    </div>
+                </div>
+                <div class="details_lower">
+                    <div class="fix">
+                        <div id="release-label">Status:</div>
+                        <div class="important_info" id="release">Available</div>
+                    </div>
+                    <div class="fix">
+                        <div id="release-label">Price:</div>
+                        <div class="important_info" id="release">Php 200.00</div>
+                    </div>
+                </div>
+                <form class="details_lower">
+                    <div class="fix">   
+                        <input type="number" class="input_number" placeholder="3">  
+                        <p class="days_display"> Days</p>
+                    </div>
+                    <button class="rent_button">ADD TO CART</button>
+                    {{!-- <a href="/post/available">    
+                        <div class="rent_button">Available for Rent</div>
+                    </a> --}}  
+                </form>
+            </div>
+        </div>
+        {{/each}}
+
+        
     </body>
+    
 </html>
