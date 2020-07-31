@@ -3,9 +3,10 @@ const mongoose = require("mongoose")
 var cartSchema = mongoose.Schema({
     title: String,
     price: Number, //change to duration
-    link: String //get image from game
-    //include new attribute for id of posting (will have price + user) + release date
-    //or just add everything as attributes, user + release + duration
+    link: String,
+    user: String,
+    release: Date,
+    duration: Number
 })
 
 var Cart = mongoose.model("cart", cartSchema)
@@ -16,8 +17,8 @@ exports.add = function(cart){
 
         c.save().then((newCart)=>{
             console.log(newCart)
-            resolve(newGame)
-        }, (err)={
+            resolve(newCart)
+        }, (err)=>{
             reject(err)
         })
     })

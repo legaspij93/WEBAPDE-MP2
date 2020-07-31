@@ -57,7 +57,7 @@ router.get("/vg/:id", function(req,res){
     console.log(req.params.id)
     Game.get(req.params.id).then((game)=>{
         console.log(game)
-        Post.getAll().then((posts)=>{
+        Post.getAllPosting(game.title).then((posts)=>{
             res.render("spiderman.hbs", {
                 game, posts
             })

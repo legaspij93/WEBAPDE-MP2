@@ -44,3 +44,13 @@ exports.getAll = function(){
         })
       })
 }
+
+exports.getAllPosting = function(title){
+    return new Promise(function(resolve, reject){
+        Post.find({title:title}).then((posts)=>{
+            resolve(posts)
+        }, (err)=>{
+            reject(err)
+        })
+    })
+}
