@@ -29,7 +29,7 @@ router.post("/add-to-cart", function(req, res){
             
             Cart.add(cart).then((cart)=>{
                 console.log(cart)
-                res.render("upload.hbs")
+                res.redirect("/game/vg/" + game._id)
             }, (error)=>{
                 res.sendFile(error)
             })
