@@ -43,13 +43,12 @@ router.post("/new-post", function(req, res){
         
          if(listingValidation(post)){
             Post.create(post).then((post)=>{
-                res.redirect("/game/games")
+                res.redirect("/user/profile")
             }, (error)=>{
                 res.sendFile(error)
             })
         }
         else{
-            console.log(post)
             req.session.errors = []
             if(!post.title)
                 req.session.errors.push({"container-id": "title","message": "Game is not selected"})
