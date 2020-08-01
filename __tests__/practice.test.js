@@ -1,7 +1,8 @@
 // NOTE: Automock is also turned on. So please import then all the functions from the module to be tested. 
 // Format and Sample, respectively, below:
-// import * as <name of app> from "<path to js file tested>"
-// import * as cart from "../models/cart";
+// const <app_name> = require('<path to js file tested>')
+// const cart = require('../models/cart')
+
 describe('This is a Unit Test Group', () => {
    describe('This is a Unit Test Subgroup', () => {
         test('This is the test function #1', () => {

@@ -6,7 +6,6 @@ var gameSchema = mongoose.Schema({
     genre: String,
     release: Date,
     rating: String,
-    description: String,
     link: String,
     clicks: Number
 }) 
