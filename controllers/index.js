@@ -6,6 +6,7 @@ const app =  express()
 router.use("/user", require("./userController"))
 router.use("/game", require("./gameController"))
 router.use("/post", require("./postController"))
+router.use("/cart", require("./cartController"))
 
 router.get("/", function(req,res){
     console.log("GET /")

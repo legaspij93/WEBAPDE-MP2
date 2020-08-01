@@ -1,6 +1,8 @@
 const express = require("express")
 const router = express.Router()
 const Cart = require("../models/cart")
+const Game = require("../models/game")
+const Post = require("../models/post")
 const bodyparser = require("body-parser")
 
 const app = express()
@@ -12,17 +14,27 @@ const urlencoder = bodyparser.urlencoded({
 router.use(urlencoder)
 
 router.post("/add-to-cart", function(req, res){
-    
-    var cart = {
-        title : req.body.title,
-        price : req.body.price, 
-        link : req.body.link,
-    }
+    let postID = req.body.postingID
 
-    Cart.create(cart).then((cart)=>{
-        console.log(cart)
-        res.render("upload.hbs")
-    }, (error)=>{
-        res.sendFile(error)
+    Post.get(postID).then((post)=>{
+        Game.getTitle(post.title).then((game)=>{
+            var cart = {
+                title : post.title,
+                price : post.price, 
+                link : game.link,
+                user : post.user,
+                release : game.release,
+                duration : req.body.duration
+            }
+            
+            Cart.add(cart).then((cart)=>{
+                console.log(cart)
+                res.redirect("/game/vg/" + game._id)
+            }, (error)=>{
+                res.sendFile(error)
+            })
+        })
     })
 })
+
+module.exports = router

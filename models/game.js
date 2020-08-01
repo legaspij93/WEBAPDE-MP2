@@ -36,6 +36,16 @@ exports.get = function(id){
     })
 }
 
+exports.getTitle = function(title){
+    return new Promise(function(resolve, reject){
+        Game.findOne({title:title}).then((game)=>{
+            resolve(game)
+        }, (err)=>{
+            reject(err)
+        })
+    })
+}
+
 exports.getAll = function(){
     return new Promise(function(resolve, reject){
       Game.find().then((games)=>{

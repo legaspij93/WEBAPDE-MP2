@@ -30,16 +30,16 @@
     padding: 0;
 }
 
+body{
+    background-color: #464646;
+}
 
 .dashboard-container{
-    background-color:#fff;
-    height: 100%;
+    background-color:#464646;
+    height: 75%;
 /*    width: 100%;*/
     margin: 0px;
-    max-width: 100%;
-    position: relative;
     overflow-x: hidden;
-    display: flex;
     flex-direction: column;
 }
 
@@ -52,130 +52,17 @@
     flex-direction: column;
 }
 
-
-#nav-bar{
-    height: 5em;
-    background-color: #737373;
-    overflow: hidden;
-    padding: 0 20px;
-    color: white;
-    position: relative;
-    z-index: 99;
-}
-
-.logo{
-    height: 2.5em;
-    margin-top: 1%;
-    float: left;
-    padding-right: 2.1875em;
-}
-
-.nav{
-    line-height: 5em;
-}
-
-.nav a{
-    font-family: ralewaysemibold;
-    text-decoration: none;
-    color: white;
-    font-size: 24px;
-    padding: 0 10px;
-    transition: 0.4s;
-}
-
-.search-container{
-    position: absolute;
-    transform: translate(-50%, -35%);
-    background: #2f3640;
-    height: 1.875em;
-    border-radius: 30px;
-    margin-top: 0.625em;
-    padding: 0.625em;
-    top: 1.3em;
-    left: 83%;
-}
-
-.search-btn{
-    color: #fd8f4b;
-    float: right;
-    width: 10px;
-    height: 30px;
-    border-radius: 50%;
-    background: #2f3640;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.4s;
-}
-
-
-.search-box{
-    border: none;
-    background: none;
-    outline: none;
-    float: left;
-    padding: 0;
-    color: white;
-    font-size: 16px;
-    transition: 0.4s;
-    line-height: 30px;
-    width: 9.375em;
-}
-
-
-.cart{
-    height: 1.2em;
-    width: 1.2em;
-    position: absolute;
-    margin-top: 0.3em;
-    padding: 0.3em;
-    top: 0.3125em;
-    left: 90%;
-}
-
-.profile{
-    position: absolute;
-    top: -0.2em;
-    right: 1%;
-}
-
-
-.nav-right{
-    float: right;
-    line-height: 80px;
-}
-
-
-.nav a:hover{
-    color: #fd8f4b;
-}
-
-/*FOR NAVBAR*/
-.sticky{
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-.sticky + .content-container{
-    padding-top: 80px;
-}
-/*END OF NAVBAR*/
-
-
 .details-container{
     height: 17em;
-    width: 100%;
-/*    background-color: black;*/
-    background-color: rgba(0, 0, 0, 0.8);
+    width: 80%;
     position: absolute;
     z-index: 2;
     border-style: none;
     padding: 15px;
     padding-left: 20px;
-    margin-top: 5px;
-    
+    margin-left: 10%;
 }
+
 
 .product-image-container{
     height: 14.375em;
@@ -194,11 +81,11 @@
 
 .product-container{
     position: absolute;
-    height: 90%;
-    width: 100%;
-    top: 3em;
-    display: block;
-    left: 15%;
+    height: 75%;
+    width: 80%;
+    top: 1em;
+    display: flex;
+    left: 20%;
     
 }
 
@@ -218,17 +105,19 @@
     color: #d4d4d4;
     font-family: ralewayregular;
     font-size: 18px;
-    margin-top: 20px;
+    margin-top: 5px;
+    padding-left: 10px;
     
 }
 
 #release-label, #genre-label, .rating-label, .user-rating-label{
-    font-family: ralewaysemibold;
-    color: #737373;
+    font-family: ralewayregular;
+    color: white;
 }
 
 #release, #genre, #rating-label{
     font-family: ralewayregular;
+    color: white;
 }
 
 .rating-container{
@@ -249,31 +138,6 @@
     font-family: ralewayregular;
     padding-left: 10px;
 }
-
-.rent-button{
-    height: 30px;
-    width: 18.75em;
-    background-color:#fd8f4b;
-    padding: 5px;
-    color: white;
-    font-family: ralewayregular;
-    text-align: center;
-    align-content: center;
-    display: inline-block;
-    line-height: 30px;
-    margin-top: 5px;
-    border-style: none;
-    border-radius: 3px;
-    position: absolute;
-    top: 45%;
-/*    left: 10%;*/
-}
-
-.rent-button:hover{
-    background-color: #f66d18;
-    cursor: pointer;
-}
-
 
 
 .description-container{
@@ -354,7 +218,7 @@
     text-align: center;
 }
 
-.rent-button{
+.rent_days{
     height: 30px;
     width: 150px;
     background-color:#fd8f4b;
@@ -363,18 +227,110 @@
     font-family: ralewayregular;
     text-align: center;
     align-content: center;
-    display: inline-block;
     line-height: 30px;
     margin-top: 5px;
     border-style: none;
-    border-radius: 3px;
 }
 
-.rent-button:hover{
+.rent_button{
+    height: 33%;
+    width: 150px;
+    background-color:#fd8f4b;
+    padding: 5px;
+    color: black;
+    font-family: ralewayregular;
+    text-align: center;
+    align-content: center;
+    display: inline-block;
+    margin-top: 5px;
+    border-style: none;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.rent_button:hover{
     background-color: #f66d18;
     cursor: pointer;
 }
 
 #1{
     float: left;
+}
+
+#game_title{
+    margin-left: 11%;
+    margin-top: 3%;
+    color: white;
+}
+
+.left_info{
+    width: 45%;
+    padding-top: 14px;
+}
+
+
+
+.important_info{
+    font-weight: bold;
+    font-size: medium;
+    margin-bottom: 1%;
+    margin-left: 2%;
+}
+.details_lower{
+    margin-top: 2%;
+    height: 45%;
+    width: 38%;
+    padding-top: 3px ;
+    margin-left: 1%;
+}
+.input_number{
+    width: 10%;
+    height: 100%;
+    font-family: ralewayregular;
+    border: none;
+    background-color: #fd8f4b;
+    color: black;
+    text-align: center;
+    font-size: 100%;
+    font-weight: bold;
+    font-size: large
+}
+
+.input_number:focus{
+    outline: none;
+    font-size: large;
+}
+
+.days_divide{
+    display: flex;
+}
+
+.days_display{
+    color: white;
+    font-family: ralewayregular;
+    font-size: large;
+    margin-left: 2%;
+}
+
+.indiv_listing{
+    background-color: #373737;
+    box-shadow: 2px 2px 2px #00000054;
+    width: 80%;
+    margin-left: 1%;
+    height: 30%;
+    display: flex;
+    margin-bottom: 3%;
+    padding-bottom: 2%;
+}
+
+.fix{
+    display: flex;
+}
+.label_number{
+    margin-left: 8%;
+    color: white;
+    font-family: ralewayregular;
+    width: 2%;
+    margin-top: 3%;
+    font-size: medium;
 }

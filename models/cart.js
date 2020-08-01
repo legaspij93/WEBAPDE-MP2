@@ -2,8 +2,11 @@ const mongoose = require("mongoose")
 
 var cartSchema = mongoose.Schema({
     title: String,
-    price: Number,
-    link: String
+    price: Number, //change to duration
+    link: String,
+    user: String,
+    release: Date,
+    duration: Number
 })
 
 var Cart = mongoose.model("cart", cartSchema)
@@ -14,8 +17,8 @@ exports.add = function(cart){
 
         c.save().then((newCart)=>{
             console.log(newCart)
-            resolve(newGame)
-        }, (err)={
+            resolve(newCart)
+        }, (err)=>{
             reject(err)
         })
     })

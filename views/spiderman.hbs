@@ -5,132 +5,95 @@
         <meta charset="UTF-8">
         
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-        
     </head>
     
     <body>
         <div class="dashboard-container">
-            <div id="nav-bar">
-<!-----------------------NAVBAR JS----------------------------------->
-                <script>
-                    window.onscroll = function(){
-                        stickyBar()
-                    };
-
-                    var navbar = document.getElementById("nav-bar");
-                    var sticky = navbar.offsetTop;
-
-                    function stickyBar(){
-                        if(window.pageYOffset > sticky){
-                            navbar.classList.add("sticky")
-                        }else{
-                            navbar.classList.remove("sticky")
-                        }
-                    }
-                </script>
-<!-------------------------------------------------------------------->
-                <img src="/image/LOGO2.png" class="logo">
-                
-                <ul class="nav">
-                    <a href="/game/games" name="games">Games</a>
-                    <a href="/post/upload" name="upload">Upload</a>
-
-                    
-                    <div class="nav-right">
-                        <div class="search-container">
-                            <input class="search-box" type="text" name="search" placeholder=" Search..." >
-                            <a class="search-btn" href="#">
-                                <i class="fas fa-search"></i>
-                            </a>
+            <!--NAVBAR-->
+            <div id="nav"></div>
+            <script>
+                $.get("/nav.html", function(data){
+                    $("#nav").replaceWith(data).stop();
+                });
+            </script>
+            <!--START-->
+            <h1 id="game_title"> {{game.title}}</h1>         
+            <div class="details-container">
+                <div class="product-image-container">
+                    <img class="product-image" src="{{game.link}}">
+                </div>
+                        
+                <div class="product-container">
+                    <div class="left_info">
+                        <div class="details">
+                            <span id="release-label"> Rating: </span>
+                            <span id="release">{{game.rating}}</span>
                         </div>
-                        <a href="/cart"><i class="fas fa-shopping-cart cart"></i></a>
-                        <a href="/user/profile" class="profile" name="system">Profile</a>
-                    </div>
-                </ul>
-   
-            </div>
-            
-            <div class="content-container">             
-                <div class="details-container">
-                    <div class="product-image-container">
-                        <img class="product-image" src="{{game.link}}">
-                    </div>
-                        
-                    <div class="product-container">
-                        <div class="product-name"><span>{{game.title}}</span></div>
-                        
+                        <div class="details">
+                            <span id="release-label"> Console: </span>
+                            <span id="release">{{game.rating}}</span>
+                        </div>
+                        <div class="details">
+                            <span id="release-label"> Genre: </span>
+                            <span id="release">{{game.genre}}</span>
+                        </div>
                         <div class="details">
                             <span id="release-label">Released</span>
                             <span id="release">{{game.release}}</span>
-                            <span id="genre-label">Genre</span>
-                            <span id="genre"><a href="#" style="color: #fd8f4b; font-family: ralewayregular" >{{game.genre}}</a></span>
                         </div>
-                        
-                        <div class="rating-container">
-                            <div class="rating-label">Rating</div>
-                            <div class="rating">{{game.rating}}</div>
-                        </div>
-                        
-                        
-                        <a href="/post/available">    
-                            <div class="rent-button-ctnr">
-                                <div class="rent-button">Available for Rent</div>
-                            </div>
-                        </a>
-                        
                         
                     </div>
-
-                    
-                </div>
-                
-                <div class="body-container">
-                    
-                    <div class="description-container">
-                        <div class="description-label">Description</div>
-                        <p>{{game.description}}</p>
-                    </div>
-                    
-<!--
-                    <div class="available-label">Available for Rent</div>
-                        
-                        <div class="available-container">
-                            
-                            <div class="product" id="1">
-                                <img src="image/Spiderman/ps4.jpg" class="available-image">
-                                <div class="available-details">
-                                    <div class="product-title" >Marvel's Spider-Man</div>
-                                    <div class="price">₱500</div>
-                                    <a href="/rental"><div class="rent-button">
-                                        RENT
-                                        </div></a>
-                                </div>
-
-                            </div>
-                            
-                            <div class="product" id="2">
-                                <img src="image/Spiderman/ps4.jpg" class="available-image">
-                                <div class="available-details">
-                                    <div class="product-title">Marvel's Spider-Man</div>
-                                    <div class="price">₱700</div>
-                                     <a href="/rental2"><div class="rent-button">
-                                        RENT
-                                         </div></a>
-                                </div>
-
-                            </div>
-                            
-                        </div>
--->
-                    
-
                 </div>
             </div>
-                
-                
-            
-
-                
         </div>
+        
+        {{#each posts}}
+        <div class="fix">
+            <h1 class="label_number"> {{@index}}</h1>
+            <div class="indiv_listing">
+                <div class="details_lower">
+                    <div class="details">
+                        <span id="release-label"> Owner: </span>
+                        <span id="release" name="user">{{user}}</span>
+                    </div>
+                    <div class="details">
+                        <span id="release-label"> Region: </span>
+                        <span id="release" name="region">{{region}}</span>
+                    </div>
+                    <div class="details">
+                        <span id="release-label"> Condition: </span>
+                        <span id="release">{{description}}</span>
+                    </div>
+                    <input type="hidden" value="{{game.title}}" name="title">
+                    <input type="hidden" value="{{game.release}}" name="release">
+                </div>
+                <div class="details_lower">
+                    <div class="fix">
+                        <div id="release-label">Status:</div>
+                        <div class="important_info" id="release" name="status">{{status}}</div>
+                    </div>
+                    <div class="fix">
+                        <div id="release-label">Price:</div>
+                        <div class="important_info" id="release" name="price">{{price}}</div>
+                    </div>
+                </div>
+                <form class="details_lower" action="/cart/add-to-cart" method="POST">
+                    <div class="fix">   
+                        <input type="number" class="input_number" placeholder="3" name="duration">  
+                        <p class="days_display"> Days</p>
+                    </div>
+                    <button class="rent_button" type="submit">ADD TO CART</button>
+                    <input type="hidden" value="{{_id}}" name="postingID">
+                    <input type="hidden" value="{{game._id}}" name="gameID">
+                    {{!-- <a href="/post/available">    
+                        <div class="rent_button">Available for Rent</div>
+                    </a> --}}  
+                </form>
+            </div>
+        </div>
+        {{/each}}
+
+        
     </body>
+    
 </html>

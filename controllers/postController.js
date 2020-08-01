@@ -57,7 +57,15 @@ router.post("/new-post", function(req, res){
 })
 
 router.get("/available", function(req, res){
-    res.render("available.hbs")
+    Post.getAll().then((posts)=>{
+        res.render("available.hbs", {posts})
+        })
+})
+
+router.get("/listing", function(req,res){
+    Post.get(req.id).then((post)=>{
+        res.render("rental.hbs", {post})
+    })
 })
 
 router.get("/upload", function(req, res){

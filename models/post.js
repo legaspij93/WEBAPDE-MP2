@@ -37,8 +37,18 @@ exports.get = function(id){
 
 exports.getAll = function(){
     return new Promise(function(resolve, reject){
-        Post.find().then((post)=>{
-            resolve(post)
+        Post.find().then((posts)=>{
+          resolve(posts)
+        }, (err)=>{
+          reject(err)
+        })
+      })
+}
+
+exports.getAllPosting = function(title){
+    return new Promise(function(resolve, reject){
+        Post.find({title:title}).then((posts)=>{
+            resolve(posts)
         }, (err)=>{
             reject(err)
         })
