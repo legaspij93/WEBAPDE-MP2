@@ -106,13 +106,25 @@ router.post("/login", function(req, res){
         })
     }
     else{
-        //insert error message here
-        res.redirect("/user/loginpage")
+        User.getUser(user.email).then((newUser)=>{
+            req.session.errors = []
+            if(!newUser)
+                req.session.errors.push({"container-id": "email","message": "Invalid email address"})
+            else
+                req.session.errors.push({"container-id": "password","message": "Password is incorrect"})
+
+            req.session.savedinput = [{"container-id": "email", "content": user.email}]
+            res.redirect("/user/loginpage")
+        })
     }
 })
 
 router.get("/loginpage", function(req,res){
-    res.render("loginscreen.hbs")
+    var errors = req.session.errors
+    var savedinput = req.session.savedinput
+    req.session.errors = null
+    req.session.savedinput = null
+    res.render("loginscreen.hbs", {errors, savedinput})
 })
 
 router.get("/profile", function(req,res){

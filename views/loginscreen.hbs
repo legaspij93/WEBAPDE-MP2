@@ -1,7 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="/loginscreen.css">
-<!--        <link rel="stylesheet" href="popupS.css">-->
+        <script src="/jQuery.js"></script>
     </head>
     
     <body>
@@ -21,12 +21,12 @@
                         <div class="form-content">
                             <div class="input-section">
                                 <div class="item-label">Email</div>
-                                <input class="input-field" type="text" name="email">
+                                <div class="input-field-container" id="emailError"><input class="input-field" type="text" name="email"></div>
                             </div>
 
                             <div class="input-section">
                                 <div class="item-label">Password</div>
-                                <input class="input-field" type="password" name="password">
+                                <div class="input-field-container" id="passwordError"><input class="input-field" type="password" name="password"></div>
                             </div>
 
                             <div class="login-button-container">
@@ -40,6 +40,15 @@
                     <a class="register-link" href="/">Sign up now!</a>
                 </div>
             </div>
+            <script>
+                {{#each errors}}
+                    $('#{{container-id}}Error').append('<span class="tooltip-text">' + '{{message}}' + '</span>');
+                    $('input[name="{{container-id}}"]').css({"border-bottom": "2px solid #fd8f4b"});
+                {{/each}}
+                {{#each savedinput}}
+                    $('input[name="{{container-id}}"]').val('{{content}}')
+                {{/each}}
+            </script>
         </div>
     </body>
 </html>
