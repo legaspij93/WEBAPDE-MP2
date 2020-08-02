@@ -76,9 +76,28 @@
     font-size: 20px;
 }
 
+.input-field-container .tooltip-text{
+    visibility: hidden;
+    background-color: #fd8f4b;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    white-space: nowrap;
+}
+
+.input-field-container:hover .tooltip-text{
+    visibility: visible;
+}
+
 .input-section{
     text-align: left;
     margin-bottom: 20px;
+    position: relative;
 }
 
 .left-column{

@@ -66,7 +66,24 @@ router.post("/register", function(req, res){
         })
     }
     else{
-        //insert error message here
+        req.session.errors = []
+        if(!/[a-zA-Z]+/.test(user.firstName))
+            req.session.errors.push({"container-id": "firstName","message": "First name must only contain letters"})
+        if(!/[a-zA-Z]+/.test(user.lastName))
+            req.session.errors.push({"container-id": "lastName","message": "Last name must only contain letters"})
+        if(!/[a-zA-Z0-9]+/.test(user.region))
+            req.session.errors.push({"container-id": "region","message": "Region must only contain letters and numbers"}) 
+        if(user.password == "")
+            req.session.errors.push({"container-id": "password","message": "Password cannot be blank"})
+        if(user.password != confirmPass)
+            req.session.errors.push({"container-id": "confirmPass","message": "Passwords did not match"})
+        if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(user.email))
+            req.session.errors.push({"container-id": "email","message": "Invalid email address"})
+            
+        req.session.savedinput = [{"container-id": "firstName", "content": user.firstName}, 
+                                  {"container-id": "lastName", "content": user.lastName}, 
+                                  {"container-id": "region", "content": user.region}, 
+                                  {"container-id": "email", "content": user.email}]
         res.redirect("/")
     }
 })
@@ -89,13 +106,25 @@ router.post("/login", function(req, res){
         })
     }
     else{
-        //insert error message here
-        res.redirect("/user/loginpage")
+        User.getUser(user.email).then((newUser)=>{
+            req.session.errors = []
+            if(!newUser)
+                req.session.errors.push({"container-id": "email","message": "Invalid email address"})
+            else
+                req.session.errors.push({"container-id": "password","message": "Password is incorrect"})
+
+            req.session.savedinput = [{"container-id": "email", "content": user.email}]
+            res.redirect("/user/loginpage")
+        })
     }
 })
 
 router.get("/loginpage", function(req,res){
-    res.render("loginscreen.hbs")
+    var errors = req.session.errors
+    var savedinput = req.session.savedinput
+    req.session.errors = null
+    req.session.savedinput = null
+    res.render("loginscreen.hbs", {errors, savedinput})
 })
 
 router.get("/profile", function(req,res){

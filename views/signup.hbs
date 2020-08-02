@@ -1,6 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="signup.css">
+        <script src="/jQuery.js"></script>
     </head>
 
     <body>
@@ -19,32 +20,32 @@
                         <div class="form-content">
                             <div class="input-section">
                                 <div class="item-label">First Name</div>
-                                <input class="input-field" type="text" name="firstName">
+                                <div class="input-field-container" id="firstNameError"><input class="input-field" type="text" name="firstName"></div>
                             </div>
 
                             <div class="input-section">
                                 <div class="item-label">Last Name</div>
-                                <input class="input-field" type="text" name="lastName">
+                                <div class="input-field-container" id="lastNameError"><input class="input-field" type="text" name="lastName"></div>
                             </div>
 
                             <div class="input-section">
                                 <div class="item-label">Region</div>
-                                <input class="input-field" type="text" name="region">
+                                <div class="input-field-container" id="regionError"><input class="input-field" type="text" name="region"></div>
                             </div>
 
                             <div class="input-section">
                                 <div class="item-label">Email</div>
-                                <input class="input-field" type="text" name="email">
+                                <div class="input-field-container" id="emailError"><input class="input-field" type="text" name="email"></div>
                             </div>
 
                             <div class="input-section">
                                 <div class="item-label">Password</div>
-                                <input class="input-field" type="password" name="password">
+                                <div class="input-field-container" id="passwordError"><input class="input-field" type="password" name="password"></div>
                             </div>
 
                             <div class="input-section">
                                 <div class="item-label">Confirm Password</div>
-                                <input class="input-field" type="password" name="confirmPass">
+                                <div class="input-field-container" id="confirmPassError"><input class="input-field" type="password" name="confirmPass"></div>
                             </div>
 
                             <div class="login-button-container">
@@ -59,6 +60,15 @@
                 </div>
                 
             </div>
+            <script>
+                {{#each errors}}
+                    $('#{{container-id}}Error').append('<span class="tooltip-text">' + '{{message}}' + '</span>');
+                    $('input[name="{{container-id}}"]').css({"border-bottom": "2px solid #fd8f4b"});
+                {{/each}}
+                {{#each savedinput}}
+                    $('input[name="{{container-id}}"]').val('{{content}}')
+                {{/each}}
+            </script>
         </div>
     </body>
 </html>
