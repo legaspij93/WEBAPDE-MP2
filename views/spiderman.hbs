@@ -46,54 +46,59 @@
                 </div>
             </div>
         </div>
-        
-        {{#each posts}}
-        <div class="fix">
-            <h1 class="label_number"> {{@index}}</h1>
-            <div class="indiv_listing">
-                <div class="details_lower">
-                    <div class="details">
-                        <span id="release-label"> Owner: </span>
-                        <span id="release" name="user">{{user}}</span>
+        <div class="post-container">
+            {{#each posts}}
+            <div class="fix" id="post-item">
+                <h1 class="label_number"> {{@index}}</h1>
+                <div class="indiv_listing">
+                    <div class="details_lower">
+                        <div class="details">
+                            <span id="release-label"> Owner: </span>
+                            <span id="release" name="user">{{user}}</span>
+                        </div>
+                        <div class="details">
+                            <span id="release-label"> Region: </span>
+                            <span id="release" name="region">{{region}}</span>
+                        </div>
+                        <div class="details">
+                            <span id="release-label"> Condition: </span>
+                            <span id="release">{{description}}</span>
+                        </div>
+                        <input type="hidden" value="{{game.title}}" name="title">
+                        <input type="hidden" value="{{game.release}}" name="release">
                     </div>
-                    <div class="details">
-                        <span id="release-label"> Region: </span>
-                        <span id="release" name="region">{{region}}</span>
+                    <div class="details_lower">
+                        <div class="fix">
+                            <div id="release-label">Status:</div>
+                            <div class="important_info" id="release" name="status">{{status}}</div>
+                        </div>
+                        <div class="fix">
+                            <div id="release-label">Price:</div>
+                            <div class="important_info" id="release" name="price">{{price}}</div>
+                        </div>
                     </div>
-                    <div class="details">
-                        <span id="release-label"> Condition: </span>
-                        <span id="release">{{description}}</span>
-                    </div>
-                    <input type="hidden" value="{{game.title}}" name="title">
-                    <input type="hidden" value="{{game.release}}" name="release">
+                    <form class="details_lower" action="/cart/add-to-cart" method="POST">
+                        <div class="fix">   
+                            <input type="number" class="input_number" placeholder="3" name="duration">  
+                            <p class="days_display"> Days</p>
+                        </div>
+                        <button class="rent_button" type="submit">ADD TO CART</button>
+                        <input type="hidden" value="{{_id}}" name="postingID">
+                        <input type="hidden" value="{{game._id}}" name="gameID">
+                        {{!-- <a href="/post/available">    
+                            <div class="rent_button">Available for Rent</div>
+                        </a> --}}  
+                    </form>
                 </div>
-                <div class="details_lower">
-                    <div class="fix">
-                        <div id="release-label">Status:</div>
-                        <div class="important_info" id="release" name="status">{{status}}</div>
-                    </div>
-                    <div class="fix">
-                        <div id="release-label">Price:</div>
-                        <div class="important_info" id="release" name="price">{{price}}</div>
-                    </div>
-                </div>
-                <form class="details_lower" action="/cart/add-to-cart" method="POST">
-                    <div class="fix">   
-                        <input type="number" class="input_number" value="1" min="1" name="duration">  
-                        <p class="days_display"> Days</p>
-                    </div>
-                    <button class="rent_button" type="submit">ADD TO CART</button>
-                    <input type="hidden" value="{{_id}}" name="postingID">
-                    <input type="hidden" value="{{game._id}}" name="gameID">
-                    {{!-- <a href="/post/available">    
-                        <div class="rent_button">Available for Rent</div>
-                    </a> --}}  
-                </form>
             </div>
+            {{/each}}
         </div>
-        {{/each}}
-
-        
+        <script>
+            $(document).ready(function(){
+                if(!$('#post-item').length){
+                    $('.post-container').append('<div class="empty-label">No listings available.</div>')
+                }
+            })
+        </script>
     </body>
-    
 </html>

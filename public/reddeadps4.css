@@ -335,6 +335,11 @@ body{
     font-size: medium;
 }
 
+.empty-label{
+    margin-left: 100px;
+    color: #FFF;
+}
+
 /*SCROLLBARS*/
 *{
   scrollbar-width: thin;
