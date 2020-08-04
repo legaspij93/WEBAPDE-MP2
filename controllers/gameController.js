@@ -32,36 +32,39 @@ router.post("/add-game", function(req, res){
         link : req.body.link,
         clicks: 0 
     }
-    
-    if(validation(game)){
-        Game.create(game).then((game)=>{
-            console.log(game)
-            res.render("upload.hbs")
-        }, (error)=>{
-            res.sendFile(error)
-        })
-    }
-    else{
-        req.session.errors = []
-        if(game.title == '')
-            req.session.errors.push({"container-id": "title","message": "Game title cannot be blank"})
-        if(game.link == '')
-            req.session.errors.push({"container-id": "link","message": "Game link is invalid"})
-        if(!game.genre)
-            req.session.errors.push({"container-id": "genre","message": "Genre must be selected"})
-        if(!game.platform)
-            req.session.errors.push({"container-id": "platform","message": "Platform must be selected"})
-        if(!game.rating)
-            req.session.errors.push({"container-id": "rating","message": "Rating must be selected"})
-        
-        req.session.savedinput = [{"container-id": "title", "content": game.title}, 
-                                  {"container-id": "platform", "content": game.platform}, 
-                                  {"container-id": "genre", "content": game.genre}, 
-                                  {"container-id": "release", "content": game.release}, 
-                                  {"container-id": "rating", "content": game.rating}, 
-                                  {"container-id": "link", "content": game.link}]
-        res.redirect("/game/new-game")
-    }
+    Game.getTitle(game.title).then((exists)=>{
+        if(validation(game) && !exists){
+            Game.create(game).then((game)=>{
+                console.log(game)
+                res.render("upload.hbs")
+            }, (error)=>{
+                res.sendFile(error)
+            })
+        }
+        else{
+            req.session.errors = []
+            if(game.title == '')
+                req.session.errors.push({"container-id": "title","message": "Game title cannot be blank"})
+            if(game.link == '')
+                req.session.errors.push({"container-id": "link","message": "Game link is invalid"})
+            if(!game.genre)
+                req.session.errors.push({"container-id": "genre","message": "Genre must be selected"})
+            if(!game.platform)
+                req.session.errors.push({"container-id": "platform","message": "Platform must be selected"})
+            if(!game.rating)
+                req.session.errors.push({"container-id": "rating","message": "Rating must be selected"})
+            if(exists)
+                req.session.errors.push({"container-id": "title","message": "This game already exists in the database"})
+            
+            req.session.savedinput = [{"container-id": "title", "content": game.title}, 
+                                      {"container-id": "platform", "content": game.platform}, 
+                                      {"container-id": "genre", "content": game.genre}, 
+                                      {"container-id": "release", "content": game.release}, 
+                                      {"container-id": "rating", "content": game.rating}, 
+                                      {"container-id": "link", "content": game.link}]
+            res.redirect("/game/new-game")
+            }
+    })
 })
 
 router.get("/games", function(req,res){
