@@ -47,6 +47,8 @@ router.post("/add-game", function(req, res){
             req.session.errors.push({"container-id": "title","message": "Game title cannot be blank"})
         if(game.link == '')
             req.session.errors.push({"container-id": "link","message": "Game link is invalid"})
+        if(game.release == '')
+            req.session.errors.push({"container-id": "release","message": "Release date is not valid"})
         if(!game.genre)
             req.session.errors.push({"container-id": "genre","message": "Genre must be selected"})
         if(!game.platform)
