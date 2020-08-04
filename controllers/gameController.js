@@ -32,7 +32,6 @@ router.post("/add-game", function(req, res){
         link : req.body.link,
         clicks: 0 
     }
-    
     if(validation(game)){
         Game.create(game).then((game)=>{
             console.log(game)
