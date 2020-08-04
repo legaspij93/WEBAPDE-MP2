@@ -334,3 +334,22 @@ body{
     margin-top: 3%;
     font-size: medium;
 }
+
+/*SCROLLBARS*/
+*{
+  scrollbar-width: thin;
+  scrollbar-color: #373737 #464646;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: #464646;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #373737;
+  border-radius: 0;
+  border: 3px solid #464646;
+}
