@@ -35,7 +35,7 @@ router.post("/add-game", function(req, res){
     if(validation(game)){
         Game.create(game).then((game)=>{
             console.log(game)
-            res.render("upload.hbs")
+            res.redirect("/post/upload")
         }, (error)=>{
             res.sendFile(error)
         })
