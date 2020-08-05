@@ -49,6 +49,8 @@ router.post("/add-game", function(req, res){
                 req.session.errors.push({"container-id": "link","message": "Game link is invalid"})
             if(!game.genre)
                 req.session.errors.push({"container-id": "genre","message": "Genre must be selected"})
+            if(game.release == '')
+                req.session.errors.push({"container-id": "release","message": "Release date is not valid"})
             if(!game.platform)
                 req.session.errors.push({"container-id": "platform","message": "Platform must be selected"})
             if(!game.rating)
