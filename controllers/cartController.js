@@ -11,6 +11,15 @@ const urlencoder = bodyparser.urlencoded({
     extended: true
 })
 
+function durationValidation(cart){
+    if(cart.duration > 0){
+        return true
+    }
+    else{
+        return false
+    }
+}
+
 router.use(urlencoder)
 
 router.post("/add-to-cart", function(req, res){
@@ -27,12 +36,18 @@ router.post("/add-to-cart", function(req, res){
                 duration : req.body.duration
             }
             
-            Cart.add(cart).then((cart)=>{
-                console.log(cart)
+            if(durationValidation(cart)){
+                Cart.add(cart).then((cart)=>{
+                    console.log(cart)
+                    res.redirect("/game/vg/" + game._id)
+                }, (error)=>{
+                    res.sendFile(error)
+                })
+            }
+            else{
+                //insert error message here
                 res.redirect("/game/vg/" + game._id)
-            }, (error)=>{
-                res.sendFile(error)
-            })
+            }
         })
     })
 })
