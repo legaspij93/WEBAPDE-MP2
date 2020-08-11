@@ -28,7 +28,9 @@
                 </div>
                 <div class="product-container"></div>
                 <div class="checkout-container">
-                    <a class="checkout" href="/game/games/" onclick="alert('Checkout Successful!')">Checkout</a>
+                    <form action="/history/newHistory" method="POST">
+                        <button type="submit" class="checkout" onclick="alert('Checkout Successful!')">Checkout</button>
+                    </form>
                     <div class="subtotal"></div>
                 </div>
             </div>
