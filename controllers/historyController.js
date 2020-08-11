@@ -19,7 +19,7 @@ router.get("/history", function(req, res){
         for (var i in history){
             Post.get(history[i].postingID).then((post)=>{
                 Game.getTitle(post.title).then((game)=>{
-                    let his = {
+                    var his = {
                         title : game.title,
                         platform : game.platform,
                         genre : game.genre,
@@ -30,11 +30,12 @@ router.get("/history", function(req, res){
                         duration : history[i].duration,
                         price : post.price
                     } 
+                    console.log(his)
                     userHistory.push(his)
+                    console.log(userHistory)
                 })
             })
         }
-        console.log(userHistory)
         //insert render or redirect below
         // res.render("history.hbs", {userHistory})
     })
