@@ -92,4 +92,12 @@ router.get("/upload", function(req, res){
     })
 })
 
+router.post("/editPost", function(req, res){
+    let id = req.body.id;
+    let status = req.body.status;
+    Post.edit({_id:id}, {status:status}).then((post)=>{
+        console.log(post);
+    })
+})
+
 module.exports = router
