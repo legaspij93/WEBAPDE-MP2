@@ -33,7 +33,8 @@ router.post("/add-to-cart", function(req, res){
                 link : game.link,
                 user : post.user,
                 release : game.release,
-                duration : req.body.duration
+                duration : req.body.duration,
+                ID: post._id
             }
             
             if(durationValidation(cart)){
