@@ -43,8 +43,6 @@
             
             <script>
                 $(document).ready(function(){
-                    var selectedConsole = $("#select-console").val();
-                    var selectedGenre = $("#select-genre").val();
                     $(".product").remove();
                     $(".noresult").remove();
                     var userstr = '{{newUser.email}}'
@@ -57,7 +55,7 @@
                                                                 '<div class="details">' +
                                                                     '<div class="product-title">{{title}}</div>' +
                                                                     '<div class="release-date">P{{price}}</div>' +
-                                                                    '<a href=""><div class="rent-button">EDIT</div></a>' +
+                                                                    '<a href="/post/edit/{{_id}}"><div class="rent-button">EDIT</div></a>' +
                                                                 '</div>' +
                                                             '</div>').hide().show('fast');
                         }

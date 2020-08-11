@@ -54,3 +54,13 @@ exports.getAllPosting = function(title){
         })
     })
 }
+
+exports.edit = function(id, post){
+    return new Promise(function(resolve, reject){
+        Post.findOneAndUpdate({_id:id}, post).then((post)=>{
+            resolve(post)
+        }, (err)=>{
+            reject(err)
+        })
+    })
+}
