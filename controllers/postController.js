@@ -95,8 +95,15 @@ router.get("/upload", function(req, res){
 router.post("/deleteListing", function(req, res){
     let id = req.body.id
     console.log(id)
-
-    Post.delete(id)
+    Post.get(id).then((post)=>{
+        if(post.status == "Available"){
+            Post.delete(id);
+        }
+        else{
+            //insert prompt here : Game is currently being rented
+        }
+    })
+    
 })
 
 module.exports = router
