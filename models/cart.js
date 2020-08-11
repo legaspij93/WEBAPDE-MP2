@@ -5,10 +5,8 @@ var cartSchema = mongoose.Schema({
     price: Number, //change to duration
     link: String,
     user: String,
-    borrower: String,
     release: Date,
-    duration: Number,
-    ID: String
+    duration: Number
 })
 
 var Cart = mongoose.model("cart", cartSchema)
@@ -45,12 +43,3 @@ exports.getAll = function(){
       })
     })
   }
-
-exports.deleteAll = function(){
-    return new Promise(function(resolve, reject){
-        Cart.deleteMany({}).then(()=>{
-        }, (err)=>{
-            reject(err)
-        })
-    })
-}
