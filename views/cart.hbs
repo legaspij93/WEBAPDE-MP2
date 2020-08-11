@@ -42,7 +42,7 @@
                 var title = '{{title}}'
                 var link = '{{link}}'
                 var release = '{{release}}'
-                release = release.replace('08:00:00 GMT+0800 (China Standard Time)', '');
+                release = release.split('08:00:00')[0];
                 var user = '{{user}}'
                 var duration = '{{duration}}'
                 var price = '{{price}}'
