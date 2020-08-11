@@ -5,6 +5,7 @@ var cartSchema = mongoose.Schema({
     price: Number, //change to duration
     link: String,
     user: String,
+    borrower: String,
     release: Date,
     duration: Number,
     ID: String

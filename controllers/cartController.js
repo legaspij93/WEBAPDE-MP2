@@ -32,6 +32,7 @@ router.post("/add-to-cart", function(req, res){
                 price : post.price, 
                 link : game.link,
                 user : post.user,
+                borrower: req.session.email,
                 release : game.release,
                 duration : req.body.duration,
                 ID: post._id
@@ -49,6 +50,15 @@ router.post("/add-to-cart", function(req, res){
                 //insert error message here
                 res.redirect("/game/vg/" + game._id)
             }
+        })
+    })
+})
+
+router.get("/", function(req, res){
+    cartowner = req.session.email
+    Cart.getAll().then((items)=>{
+        res.render("cart.hbs", {
+            items, cartowner
         })
     })
 })
