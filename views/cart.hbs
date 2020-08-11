@@ -21,14 +21,16 @@
                 </div>
                 <div class="table-header">
                     <div class="product-pricing">
-                        <div class="pricing-content">Duration</div>
+                        <div class="pricing-content">Duration </div>
                         <div class="pricing-content">Price</div>
                         <div class="pricing-content">Total Price</div>
                     </div>
                 </div>
                 <div class="product-container"></div>
                 <div class="checkout-container">
-                    <a class="checkout" href="/game/games/" onclick="alert('Checkout Successful!')">Checkout</a>
+                    <form action="/history/newHistory" method="POST">
+                        <button type="submit" class="checkout" onclick="alert('Checkout Successful!')">Checkout</button>
+                    </form>
                     <div class="subtotal"></div>
                 </div>
             </div>
@@ -42,6 +44,7 @@
                 var title = '{{title}}'
                 var link = '{{link}}'
                 var release = '{{release}}'
+                release = release.split('08:00:00')[0];
                 var user = '{{user}}'
                 var duration = '{{duration}}'
                 var price = '{{price}}'
