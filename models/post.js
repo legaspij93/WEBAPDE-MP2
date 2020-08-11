@@ -54,3 +54,15 @@ exports.getAllPosting = function(title){
         })
     })
 }
+
+exports.delete = function (id){
+    return new Promise(function(resolve, reject){
+        Post.deleteOne({_id: id
+        }).then((post)=>{
+            console.log("Deleted: ",  post)
+        },(err)=>{
+            reject(err)
+        })
+    })
+
+}
