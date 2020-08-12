@@ -27,6 +27,17 @@ router.post("/newHistory", function(req,res){
             }
 
             History.add(history).then((history)=>{
+                Post.get(history.postingID).then((post)=>{
+                    var update = {
+                        title : post.title,
+                        user : post.user,
+                        price : post.price,
+                        status : "Rented",
+                        region : post.region,
+                        description : post.description
+                    }
+                    Post.edit(post._id, update)
+                })
                 console.log(history)
             }, (error)=>{
                 res.sendFile(error)
