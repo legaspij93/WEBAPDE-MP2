@@ -92,6 +92,19 @@ router.get("/upload", function(req, res){
     })
 })
 
+router.post("/deleteListing", function(req, res){
+    let id = req.body.id
+    console.log(id)
+    Post.get(id).then((post)=>{
+        if(post.status == "Available"){
+            Post.delete(id)
+            res.redirect("/user/profile")         
+        }
+        else{
+            //insert prompt here : Game is currently being rented
+        }
+    })
+    
 router.get("/edit/:id", function(req,res){
     var errors = req.session.errors
     var savedinput = req.session.savedinput
