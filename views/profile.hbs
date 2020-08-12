@@ -63,9 +63,9 @@
                                                                     '<form>' +
                                                                    '<button type ="submit" class="rent-button" ><div class="button">EDIT</div></button>' +
                                                                     '</form>' +
-                                                                    '<form action="/post/deleteListing" method ="POST" onsubmit="alert("Listing has been deleted");">' +
+                                                                    '<form action="/post/deleteListing" method ="POST" onsubmit="return confirm(\'Are you sure you want to delete this listing?\')">' +
                                                                     '<input type= "hidden" value ="{{_id}}" name ="id">'+
-                                                                    '<button type ="submit" class="rent-button" onclick = "alert(" + "Listing has been deleted." + ")"><div class="button">DELETE</div></button>' +
+                                                                    '<button type ="submit" class="rent-button"<div class="button">DELETE</div></button>' +
                                                                     '</form>' +
                                                                     '</div>'+
                                                                 '</div>' +
