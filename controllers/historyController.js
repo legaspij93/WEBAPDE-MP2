@@ -13,31 +13,33 @@ const urlencoder = bodyparser.urlencoded({
 
 router.use(urlencoder)
 
-router.get("/history", function(req, res){
-    History.getAll().then((history)=>{
-        var userHistory = []
-        for (var i in history){
-            Post.get(history[i].postingID).then((post)=>{
-                Game.getTitle(post.title).then((game)=>{
-                    var his = {
-                        title : game.title,
-                        platform : game.platform,
-                        genre : game.genre,
-                        release : game.release,
-                        link : game.link,
-                        owner : post.user,
-                        date : history[i].rentDate,
-                        duration : history[i].duration,
-                        price : post.price
-                    }
-                    console.log(his)
-                    userHistory.push(his)
-                    console.log(userHistory)
-                })
-            })
+router.get('/history', async function(req, res){
+    History.getAll().then(async function(history) {
+      let userHistory = []
+      
+      for (let i in history) {
+  
+        const postingID = history[i].postingID
+        const post = await Post.get(postingID)
+        const game = await Game.getTitle(post.title)
+  
+        const historyRecord = {
+          title : game.title,
+          platform : game.platform,
+          genre : game.genre,
+          release : game.release,
+          link : game.link,
+          owner : post.user,
+          date : history[i].rentDate,
+          duration : history[i].duration,
+          price : post.price,
+          total: post.price * history[i].duration
         }
-        //insert render or redirect below
-        res.render("history.hbs", {userHistory})
+  
+        userHistory.push(historyRecord)
+      }
+  
+      res.render("history.hbs", {userHistory})
     })
 })
 
