@@ -29,7 +29,7 @@ router.get("/history", function(req, res){
                         date : history[i].rentDate,
                         duration : history[i].duration,
                         price : post.price
-                    } 
+                    }
                     console.log(his)
                     userHistory.push(his)
                     console.log(userHistory)
@@ -37,7 +37,7 @@ router.get("/history", function(req, res){
             })
         }
         //insert render or redirect below
-        // res.render("history.hbs", {userHistory})
+        res.render("history.hbs", {userHistory})
     })
 })
 

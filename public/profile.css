@@ -76,6 +76,7 @@
 .email-container{
     display: flex;
     font-size: 22px;
+    
 }
 
 .email-label{
@@ -227,6 +228,20 @@
     margin-top: 15px;
     flex-wrap: wrap;
     flex-grow: 1;
+}
+
+.history-button{
+    height: 30px;
+    width: 300px;
+    background-color:#fd8f4b;
+    padding: 5px;
+    color: white;
+    font-family: ralewayregular;
+    text-align: center;
+    line-height: 30px;
+    border-style: none;
+    border-radius: 3px;
+    float: right;
 }
 
 /*SCROLLBARS*/
