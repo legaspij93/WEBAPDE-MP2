@@ -104,6 +104,7 @@ router.post("/deleteListing", function(req, res){
             //insert prompt here : Game is currently being rented
         }
     })
+})
     
 router.get("/edit/:id", function(req,res){
     var errors = req.session.errors

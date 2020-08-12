@@ -64,6 +64,7 @@ exports.delete = function (id){
             reject(err)
         })
     })
+}
 
 exports.edit = function(id, post){
     return new Promise(function(resolve, reject){
