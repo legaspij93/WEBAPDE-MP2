@@ -97,7 +97,8 @@ router.post("/deleteListing", function(req, res){
     console.log(id)
     Post.get(id).then((post)=>{
         if(post.status == "Available"){
-            Post.delete(id);
+            Post.delete(id)
+            res.redirect("/user/profile")         
         }
         else{
             //insert prompt here : Game is currently being rented

@@ -56,8 +56,18 @@
                                                                 '<div id = "' + postimgid + '"></div>' +
                                                                 '<div class="details">' +
                                                                     '<div class="product-title">{{title}}</div>' +
-                                                                    '<div class="release-date">P{{price}}</div>' +
-                                                                    '<a href=""><div class="rent-button">EDIT</div></a>' +
+                                                                    '<div class="release-date">Status: {{status}}</div>' +
+                                                                    '<div class="release-date">Rating: {{rating}}</div>' +
+                                                                    '<div class="release-date">Php {{price}}/day</div>' +
+                                                                    '<div class = "buttons">'+
+                                                                    '<form>' +
+                                                                   '<button type ="submit" class="rent-button" ><div class="button">EDIT</div></button>' +
+                                                                    '</form>' +
+                                                                    '<form action="/post/deleteListing" method ="POST" onsubmit="alert("Listing has been deleted");">' +
+                                                                    '<input type= "hidden" value ="{{_id}}" name ="id">'+
+                                                                    '<button type ="submit" class="rent-button" onclick = "alert(" + "Listing has been deleted." + ")"><div class="button">DELETE</div></button>' +
+                                                                    '</form>' +
+                                                                    '</div>'+
                                                                 '</div>' +
                                                             '</div>').hide().show('fast');
                         }
