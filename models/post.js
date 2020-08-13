@@ -55,10 +55,23 @@ exports.getAllPosting = function(title){
     })
 }
 
-exports.edit = function(oldContent, newContent){
+exports.delete = function (id){
     return new Promise(function(resolve, reject){
-        Post.findOneAndUpdate(oldContent, newContent).then((post)=>{
-            console.log("Update: " + post)
+        Post.deleteOne({_id: id
+        }).then((post)=>{
+            console.log("Deleted: ",  post)
+        },(err)=>{
+            reject(err)
+        })
+    })
+}
+
+exports.edit = function(id, post){
+    return new Promise(function(resolve, reject){
+        Post.findOneAndUpdate({_id:id}, post).then((post)=>{
+            resolve(post)
+        }, (err)=>{
+            reject(err)
         })
     })
 }
