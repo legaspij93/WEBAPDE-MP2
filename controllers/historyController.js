@@ -20,27 +20,28 @@ router.get('/history', async function(req, res){
       let userHistory = []
       
       for (let i in history) {
-  
-        const postingID = history[i].postingID
-        const post = await Post.get(postingID)
-        const game = await Game.getTitle(post.title)
-  
-        const historyRecord = {
-          title : game.title,
-          platform : game.platform,
-          genre : game.genre,
-          release : game.release,
-          link : game.link,
-          owner : post.user,
-          startDate : history[i].rentDate,
-          endDate: history[i].rentDate + history[i].duration,
-          duration : history[i].duration,
-          price : post.price,
-          total: post.price * history[i].duration,
-          returned: history[i].returned
+        if(history[i].user == req.session.email){
+          const postingID = history[i].postingID
+          const post = await Post.get(postingID)
+          const game = await Game.getTitle(post.title)
+    
+          const historyRecord = {
+            title : game.title,
+            platform : game.platform,
+            genre : game.genre,
+            release : game.release,
+            link : game.link,
+            owner : post.user,
+            startDate : history[i].rentDate,
+            endDate: history[i].rentDate + history[i].duration,
+            duration : history[i].duration,
+            price : post.price,
+            total: post.price * history[i].duration,
+            returned: history[i].returned
+          }
+    
+          userHistory.push(historyRecord)
         }
-  
-        userHistory.push(historyRecord)
       }
   
       res.render("history.hbs", {userHistory})
