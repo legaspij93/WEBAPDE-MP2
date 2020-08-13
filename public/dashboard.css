@@ -155,6 +155,57 @@
     align-self: left;
 }
 
+.search-container{
+    width: 60%;
+    margin: auto;
+    display: flex;
+}
+
+.search-type{
+     width: 100px;
+    height: 40px;
+    background-color: #707070;
+    color: #FFF;
+    float: left; 
+}
+
+.search-bar{
+    width: 100%;
+    height: 40px;
+    background-color: #585858;
+    color: #fff;
+    border: none;
+    resize: none;
+    font-size: 20px;
+    padding: 0px 10px;
+    float: left;
+}
+
+.search-button{
+    width: 40px;
+    height: 40px;
+    background-color: #707070;
+    float: left;
+}
+
+.search-results{
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    color: #FFF;
+}
+
+.search-results,.product-title,.release-date{
+    font-family: ralewayregular;
+    text-align: center; 
+}
+
+#search-results-label{
+    visibility: hidden;
+}
+
 /*SCROLLBARS*/
 *{
   scrollbar-width: thin;
