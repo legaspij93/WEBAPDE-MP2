@@ -4,6 +4,7 @@ const History = require("../models/history")
 const Game = require("../models/game")
 const Post = require("../models/post")
 const bodyparser = require("body-parser")
+const Cart = require("../models/cart")
 const { duration } = require("moment")
 
 const app = express()
@@ -43,6 +44,30 @@ router.get('/history', async function(req, res){
       }
   
       res.render("history.hbs", {userHistory})
+    })
+})
+
+router.post("/newHistory", function(req,res){
+    Cart.getAll().then((carts)=>{
+        for(var i in carts){
+            var today = new Date()
+
+            var history = {
+                user : req.session.email,
+                postingID: carts[i].ID, 
+                rentDate: (today.getMonth()+1)+'-'+today.getDate()+'-'+today.getFullYear(),
+                duration: carts[i].duration,
+                returned: false
+            }
+
+            History.add(history).then((history)=>{
+                console.log(history)
+            }, (error)=>{
+                res.sendFile(error)
+            })
+        }
+        Cart.deleteAll()
+        res.redirect("/game/games")
     })
 })
 

@@ -14,9 +14,21 @@ exports.getAll = function(){
     return new Promise(function(resolve, reject){
         History.find().then((history)=>{
             resolve(history)
+        })
+    })
+}
+
+exports.add = function(history){
+    return new Promise(function(resolve, reject){
+        var h = new History(history)
+
+        h.save().then((newHistory)=>{
+            console.log(newHistory)
+            resolve(newHistory)
         }, (err)=>{
             reject(err)
         })
     })
 }
+
 
