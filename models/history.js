@@ -4,7 +4,8 @@ var historySchema = mongoose.Schema({
     user: String,
     postingID: String,
     rentDate: Date,
-    duration: Number
+    duration: Number,
+    returned: Boolean
 })
 
 var History = mongoose.model("history", historySchema)

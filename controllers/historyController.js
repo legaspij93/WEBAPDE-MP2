@@ -4,6 +4,7 @@ const History = require("../models/history")
 const Game = require("../models/game")
 const Post = require("../models/post")
 const bodyparser = require("body-parser")
+const { duration } = require("moment")
 
 const app = express()
 
@@ -30,10 +31,12 @@ router.get('/history', async function(req, res){
           release : game.release,
           link : game.link,
           owner : post.user,
-          date : history[i].rentDate,
+          startDate : history[i].rentDate,
+          endDate: history[i].rentDate + history[i].duration,
           duration : history[i].duration,
           price : post.price,
-          total: post.price * history[i].duration
+          total: post.price * history[i].duration,
+          returned: history[i].returned
         }
   
         userHistory.push(historyRecord)
