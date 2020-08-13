@@ -122,7 +122,7 @@ router.get("/edit/:id", function(req,res){
 
 router.post("/edit/edit-post", function(req, res){
     User.getUser(req.session.email).then((user)=>{
-        var status = "Available"
+        var status = req.body.status
         var postID = req.body.id
         console.log(user.email)
         

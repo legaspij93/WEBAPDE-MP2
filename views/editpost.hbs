@@ -46,7 +46,15 @@
                             <div class="right-column">
                                 <div class="input-section">
                                     <div class="item-label">Status</div>
-                                    <div class="item-display">Available</div>
+                                    {{!-- <div class="item-display">Available</div> --}}
+                                    <div class="input-field-container" id="titleError">
+                                        <select id = "status-dropdown" class="dropdown-field" name="status">
+                                            <option value= "Available">Available</option>
+                                            <option value = "Rented">Rented</option>
+
+                                        </select>
+                                    </div>
+                                    
                                 </div>
                                 
                                 <div class="input-section">
@@ -75,6 +83,17 @@
                 {{#each savedinput}}
                     $('[name="{{container-id}}"]').val('{{content}}')
                 {{/each}}
+
+                function setSelectedIndex(s, valsearch){
+                    for (i = 0; i< s.options.length; i++){ 
+                        if (s.options[i].value == valsearch){
+                            s.options[i].selected = true;
+                            break;
+                        }
+                    }
+                    return;
+                }
+                setSelectedIndex(document.getElementById("status-dropdown"),"{{post.status}}");
             </script>
         </div>
     </body>
