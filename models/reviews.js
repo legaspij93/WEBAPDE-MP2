@@ -26,7 +26,18 @@ exports.getAll = function(){
     return new Promise(function(resolve, reject){
         Review.find().then((reviews)=>{
             console.log(reviews)
-            resolve(review)
+            resolve(reviews)
+        }, (err)=>{
+            reject(err)
+        })
+    })
+}
+
+exports.getPostingReviews = function(postingID){
+    return new Promise(function(resolve, reject){
+        Review.find({postID:postingID}).then((reviews)=>{
+            console.log(reviews)
+            resolve(reviews)
         }, (err)=>{
             reject(err)
         })

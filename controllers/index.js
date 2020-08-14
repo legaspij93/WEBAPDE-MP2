@@ -8,6 +8,7 @@ router.use("/game", require("./gameController"))
 router.use("/post", require("./postController"))
 router.use("/cart", require("./cartController"))
 router.use("/history", require("./historyController"))
+router.use("/review", require("./reviewController"))
 
 router.get("/", function(req,res){
     var errors = req.session.errors
