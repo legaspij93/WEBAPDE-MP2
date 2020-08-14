@@ -112,7 +112,7 @@
                             <div class="important_info" id="release" name="price">{{price}}</div>
                         </div>
                         <div class="fix">
-                        <button class="item-sub-link check_reviews" data-id="{{_id}}">
+                        <button class="item-sub-link check_reviews" data-id='{{_id}}'>
                             Check the Reviews!
                         </button>
                         </div>
@@ -137,10 +137,15 @@
         </div>
 
         <script>
+            var modal = document.getElementById("reviewModal");
             $(document).ready(function(){
-                $('button.check_reviews').click(function(){
+                if(!$('#post-item').length){
+                    $('.post-container').append('<div class="empty-label">No listings available.</div>')
+                }
+
+                $("check_reviews").click(function(){
                     let postID = $(this).attr("data-id")
-                    document.getElementById('hiddenPostID').value = postID
+                    {{!-- document.getElementById('hiddenPostID').value = postID --}}
                     console.log("PostID: " + postID)
                     {{#each reviews}}
                         if(postID == '{{postID}}'){
@@ -150,19 +155,13 @@
                                                             '</div>').hide().show('fast')
                         }
                     {{/each}}
+                modal.style.display = "block"
+                
                 })
-            });
-        </script>
-
-        <script>
-            $(document).ready(function(){
-                if(!$('#post-item').length){
-                    $('.post-container').append('<div class="empty-label">No listings available.</div>')
-                }
             })
 
             // Get the modal
-                var modal = document.getElementById("reviewModal");
+                
 
                 // Get the button that opens the modal
                 var btns = document.querySelectorAll('.check_reviews');
