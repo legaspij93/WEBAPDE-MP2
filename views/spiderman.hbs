@@ -19,22 +19,23 @@
         </div>
         <div class="modal-body">
             <div class ="review-container">
+                {{!-- {{#each reviews}}
                 <div class = "indiv-review">
                     <div class = "review-content">
-                        "Owner is very responsive and game is in great condition!" 
+                        {{review}} 
                     </div>
                     <div class = "review-author">
-                        by Rebecalyn Lao
+                        by {{reviewerID}}
                     </div>
-                </div>
-              
-                
+                </div>  
+            {{/each}} --}}
             </div>
         </div>
         <div class="modal-footer">
-            <form>
-                <input type = "text" class = "review_textbox" placeholder="Leave a review!">
-                <button class="rent_button">SUBMIT</button>
+            <form method="POST" action="/review/new-review">
+                <input type = "text" class = "review_textbox" placeholder="Leave a review!" name="review">
+                <button type="submit" class="rent_button">SUBMIT</button>
+                <input type="hidden" id="hiddenpostID" value="" name="postID">
             </form>
             
         </div>
@@ -111,9 +112,9 @@
                             <div class="important_info" id="release" name="price">{{price}}</div>
                         </div>
                         <div class="fix">
-                        <a href="#" class="item-sub-link check_reviews">
+                        <button class="item-sub-link check_reviews" data-id="{{_id}}">
                             Check the Reviews!
-                        </a>
+                        </button>
                         </div>
                     </div>
                     <form class="details_lower" action="/cart/add-to-cart" method="POST">
@@ -135,7 +136,24 @@
 
         </div>
 
-      
+        <script>
+            $(document).ready(function(){
+                $('button.check_reviews').click(function(){
+                    let postID = $(this).attr("data-id")
+                    document.getElementById('hiddenPostID').value = postID
+                    console.log("PostID: " + postID)
+                    {{#each reviews}}
+                        if(postID == '{{postID}}'){
+                            $(".review-container").append('<div class="indiv-review">' +
+                                                                    '<div class="review-content">{{review}}</div>'+
+                                                                    '<div class="review-author">by {{reviewerID}}</div>'+
+                                                            '</div>').hide().show('fast')
+                        }
+                    {{/each}}
+                })
+            });
+        </script>
+
         <script>
             $(document).ready(function(){
                 if(!$('#post-item').length){

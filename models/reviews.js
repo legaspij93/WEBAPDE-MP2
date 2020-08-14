@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 
 var reviewSchema = mongoose.Schema({
     postID: String,
-    reviwerID: String,
+    reviewerID: String,
     review: String
 })
 
@@ -11,7 +11,7 @@ var Review = mongoose.model("review", reviewSchema)
 exports.create = function(review){
     return new Promise(function(resolve,reject){
         console.log(review)
-        var r = new Review(r)
+        var r = new Review(review)
 
         r.save().then((newReview)=>{
             console.log(newReview)

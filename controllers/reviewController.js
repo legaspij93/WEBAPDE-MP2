@@ -19,6 +19,7 @@ router.post("/new-review", function(req,res){
     }
 
     Review.create(review).then((review)=>{
+        console.log(review)
         //insert prompt here
     },(error)=>{
         res.sendFile(error)
