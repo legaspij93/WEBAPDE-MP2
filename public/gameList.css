@@ -136,6 +136,32 @@
 .noresult{
     color: #FFF;
 }
+
+.search-container{
+    width: 60%;
+    margin: auto;
+    display: flex;
+}
+
+.search-bar{
+    width: 100%;
+    height: 40px;
+    background-color: #585858;
+    color: #fff;
+    border: none;
+    resize: none;
+    font-size: 20px;
+    padding: 0px 10px;
+    float: left;
+}
+
+.search-button{
+    width: 40px;
+    height: 40px;
+    background-color: #707070;
+    float: left;
+}
+
 /*SCROLLBARS*/
 *{
   scrollbar-width: thin;

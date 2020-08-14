@@ -76,6 +76,7 @@
 .email-container{
     display: flex;
     font-size: 22px;
+    
 }
 
 .email-label{
@@ -153,8 +154,8 @@
 }
 
 .rent-button{
-    height: 30px;
-    width: 150px;
+    height: 37px;
+    width: 75px;
     background-color:#fd8f4b;
     padding: 5px;
     color: white;
@@ -163,9 +164,12 @@
     align-content: center;
     display: inline-block;
     line-height: 30px;
-    margin-top: 5px;
+    margin-top: -1px;
+    margin-left: 5px;
+    margin-right: 5px;
     border-style: none;
     border-radius: 3px;
+    vertical-align: middle;
 }
 
 .rent-button:hover{
@@ -212,8 +216,8 @@
 .product{
     max-width: 200px;
     min-width: 200px;
-    max-height: 315px;
-    min-height: 315px;
+    max-height: 345px;
+    min-height: 345px;
     display: block;
     margin: 5px;
     background-color: #373737;
@@ -227,6 +231,32 @@
     margin-top: 15px;
     flex-wrap: wrap;
     flex-grow: 1;
+}
+
+.history-button{
+    height: 30px;
+    width: 300px;
+    background-color:#fd8f4b;
+    padding: 5px;
+    color: white;
+    font-family: ralewayregular;
+    text-align: center;
+    line-height: 30px;
+    border-style: none;
+    border-radius: 3px;
+    float: right;
+}
+
+.buttons{
+    display: flex;
+    padding: 15px;
+}
+
+.button{
+    text-align: center;
+    align-content: center;
+    vertical-align: middle;
+    margin: auto;
 }
 
 /*SCROLLBARS*/
