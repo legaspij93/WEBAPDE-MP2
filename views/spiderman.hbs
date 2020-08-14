@@ -8,6 +8,40 @@
     </head>
     
     <body>
+                  <!-- The Modal -->
+        <div id="reviewModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Owner (owner)</h2>
+        </div>
+        <div class="modal-body">
+            <div class ="review-container">
+                <div class = "indiv-review">
+                    <div class = "review-content">
+                        "Owner is very responsive and game is in great condition!" 
+                    </div>
+                    <div class = "review-author">
+                        by Rebecalyn Lao
+                    </div>
+                </div>
+              
+                
+            </div>
+        </div>
+        <div class="modal-footer">
+            <form>
+                <input type = "text" class = "review_textbox" placeholder="Leave a review!">
+                <button class="rent_button">SUBMIT</button>
+            </form>
+            
+        </div>
+        </div>
+
+        </div>
+
         <div class="dashboard-container">
             <!--NAVBAR-->
             <div id="nav"></div>
@@ -76,6 +110,11 @@
                             <div id="release-label">Price:</div>
                             <div class="important_info" id="release" name="price">{{price}}</div>
                         </div>
+                        <div class="fix">
+                        <a href="#" class="item-sub-link check_reviews">
+                            Check the Reviews!
+                        </a>
+                        </div>
                     </div>
                     <form class="details_lower" action="/cart/add-to-cart" method="POST">
                         <div class="fix">   
@@ -88,17 +127,49 @@
                         {{!-- <a href="/post/available">    
                             <div class="rent_button">Available for Rent</div>
                         </a> --}}  
+                        
                     </form>
                 </div>
             </div>
             {{/each}}
+
         </div>
+
+      
         <script>
             $(document).ready(function(){
                 if(!$('#post-item').length){
                     $('.post-container').append('<div class="empty-label">No listings available.</div>')
                 }
             })
+
+            // Get the modal
+                var modal = document.getElementById("reviewModal");
+
+                // Get the button that opens the modal
+                var btns = document.querySelectorAll('.check_reviews');
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks on the button, open the modal
+                [].forEach.call(btns, function(el) {
+                    el.onclick = function() {
+                        modal.style.display = "block";
+                    }
+                })
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                modal.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+                }
         </script>
     </body>
 </html>
