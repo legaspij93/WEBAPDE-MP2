@@ -433,6 +433,13 @@ body{
     text-align-last: right;
     margin:1%;
     }
+    .check_reviews{
+        background: none!important;
+        border: none;
+        color: #f66d18;
+        text-decoration: underline;
+        cursor: pointer;
+    }
 
 /*SCROLLBARS*/
 *{
