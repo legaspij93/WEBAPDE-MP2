@@ -15,10 +15,10 @@
         <div class="modal-content">
         <div class="modal-header">
             <span class="close">&times;</span>
-            <h2>Owner (owner)</h2>
+            <h2 id="ownerTag"></h2>
         </div>
         <div class="modal-body">
-            <div class ="review-container">
+            <div class ="review-container" id="reviewCont">
                 {{!-- {{#each reviews}}
                 <div class = "indiv-review">
                     <div class = "review-content">
@@ -34,7 +34,7 @@
         <div class="modal-footer">
             <form method="POST" action="/review/new-review">
                 <input type = "text" class = "review_textbox" placeholder="Leave a review!" name="review">
-                <button type="submit" class="rent_button">SUBMIT</button>
+                <button id="reviewSubmit" type="submit" class="rent_button">SUBMIT</button>
                 <input type="hidden" id="hiddenPostID" value="" name="postID">
             </form>
             
@@ -112,7 +112,7 @@
                             <div class="important_info" id="release" name="price">{{price}}</div>
                         </div>
                         <div class="fix">
-                        <button class="check_reviews" data-id='{{_id}}'>
+                        <button class="check_reviews" data-id='{{_id}}' name="{{user}}">
                             Check the Reviews!
                         </button>
                         </div>
@@ -145,7 +145,9 @@
 
                 $(".check_reviews").click(function(){
                     let postID = $(this).attr("data-id")
+                    let owner = $(this).attr("name")
                     document.getElementById("hiddenPostID").value = postID
+                    document.getElementById("ownerTag").innerHTML = owner
                     console.log("PostID: " + postID)
                     {{#each reviews}}
                         if(postID == '{{postID}}'){
@@ -158,6 +160,11 @@
                     modal.style.display = "block"
                 
                 })
+
+                $("#reviewSubmit").click(function(){
+                    alert("Review submitted!");
+                })
+
             })
                 
 
@@ -170,12 +177,14 @@
                 // When the user clicks on <span> (x), close the modal
                 span.onclick = function() {
                 modal.style.display = "none";
+                document.getElementById("reviewCont").innerHTML = ""
                 }
 
                 // When the user clicks anywhere outside of the modal, close it
                 window.onclick = function(event) {
                 if (event.target == modal) {
                     modal.style.display = "none";
+                    document.getElementById("reviewCont").innerHTML = ""
                 }
                 }
         </script>

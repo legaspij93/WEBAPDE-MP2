@@ -1,6 +1,8 @@
 const express = require("express")
 const router = express.Router()
 const Review = require("../models/reviews")
+const Post = require("../models/post")
+const Game = require("../models/game")
 const bodyparser = require("body-parser")
 
 const app = express()
@@ -19,8 +21,12 @@ router.post("/new-review", function(req,res){
     }
 
     Review.create(review).then((review)=>{
-        console.log(review)
-        //insert prompt here
+        Post.get(review.postID).then((post)=>{
+            Game.getTitle(post.title).then((game)=>{
+                console.log(review)
+                res.redirect("/game/vg/" + game._id)
+            })
+        })
     },(error)=>{
         res.sendFile(error)
     })
