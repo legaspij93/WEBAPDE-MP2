@@ -35,7 +35,7 @@
             <form method="POST" action="/review/new-review">
                 <input type = "text" class = "review_textbox" placeholder="Leave a review!" name="review">
                 <button type="submit" class="rent_button">SUBMIT</button>
-                <input type="hidden" id="hiddenpostID" value="" name="postID">
+                <input type="hidden" id="hiddenPostID" value="" name="postID">
             </form>
             
         </div>
@@ -143,9 +143,9 @@
                     $('.post-container').append('<div class="empty-label">No listings available.</div>')
                 }
 
-                $("check_reviews").click(function(){
+                $(".check_reviews").click(function(){
                     let postID = $(this).attr("data-id")
-                    {{!-- document.getElementById('hiddenPostID').value = postID --}}
+                    document.getElementById("hiddenPostID").value = postID
                     console.log("PostID: " + postID)
                     {{#each reviews}}
                         if(postID == '{{postID}}'){
@@ -155,12 +155,10 @@
                                                             '</div>').hide().show('fast')
                         }
                     {{/each}}
-                modal.style.display = "block"
+                    modal.style.display = "block"
                 
                 })
             })
-
-            // Get the modal
                 
 
                 // Get the button that opens the modal
@@ -168,13 +166,6 @@
 
                 // Get the <span> element that closes the modal
                 var span = document.getElementsByClassName("close")[0];
-
-                // When the user clicks on the button, open the modal
-                [].forEach.call(btns, function(el) {
-                    el.onclick = function() {
-                        modal.style.display = "block";
-                    }
-                })
 
                 // When the user clicks on <span> (x), close the modal
                 span.onclick = function() {
