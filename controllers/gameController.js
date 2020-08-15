@@ -3,6 +3,7 @@ const router = express.Router()
 const Game = require("../models/game")
 const bodyparser = require("body-parser")
 const Post = require("../models/post")
+const Review = require("../models/reviews")
 
 const app = express()
 
@@ -98,8 +99,10 @@ router.get("/vg/:id", function(req,res){
     Game.get(req.params.id).then((game)=>{
         console.log(game)
         Post.getAllPosting(game.title).then((posts)=>{
-            res.render("spiderman.hbs", {
-                game, posts
+            Review.getAll().then((reviews)=>{
+                res.render("spiderman.hbs", {
+                    game, posts, reviews
+                })
             })
         })
     })
