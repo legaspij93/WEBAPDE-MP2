@@ -83,7 +83,7 @@
         </div>
         <div class="post-container">
             {{#each posts}}
-            <div class="fix" id="post-item">
+            <div class="fix post_{{_id}}" id="post-item">
                 <h1 class="label_number"> {{@index}}</h1>
                 <div class="indiv_listing">
                     <div class="details_lower">
@@ -166,6 +166,15 @@
                 })
 
             })
+            
+            //removing rented items
+            {{#each posts}}
+            var postID = '.post_{{_id}}'
+            var postStatus = '{{status}}'
+            if($(postID) && postStatus != 'Available'){
+                $(postID).remove();
+            }
+            {{/each}}
                 
 
                 // Get the button that opens the modal
